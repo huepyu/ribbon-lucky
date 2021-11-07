@@ -48,19 +48,27 @@ function Step1({ goNext }) {
         setOurProducts(op => [...op, product])
     }
 
+    function deleteProduct(e, idx) {
+        e.preventDefault()
+        setOurProducts(op => 
+            [
+                ...op.slice(0, idx),
+                ...op.slice(idx + 1)
+            ]
+        )
+    }
+
     return (
         <div className="step-1">
             <div className="s1-left">
-                {ourProducts.map((p, idx) => (
-                    <div key={idx} className="s1-product">
-                        <div key={p.id} className="s1-product" onClick={e => addProduct(e, p)}>
-                        <p className="s1-product-title">{p.name}</p>
-                        {p.rewards.map((r, idx) =>
-                            <p key={idx} className="s1-product-reward">{r}</p>
-                        )}
-                    </div>
-                    </div>
-                ))}
+                <div className="s1-our-products">
+                    {ourProducts.map((p, idx) => (
+                        <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
+                            {p.name}
+                        </div>
+                    ))}
+                </div>
+                <div className="s1-next-btn">다음 단계로</div>
             </div>
             <div className="s1-right">
                 <div className="s1-products-grid">

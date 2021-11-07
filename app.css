@@ -60,6 +60,26 @@ body {
     align-items: center;
 }
 
+.s1-our-products {
+    height: calc(100% - 50px);
+    padding: 20px;
+}
+
+.s1-our-product {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: 5C8001;
+    color: #fff;
+}
+
+.s1-next-btn {
+    height: 50px;
+    background-color: #7CB518;
+    color: #fff;
+    font-size: 24px;
+}
+
 .s1-right {
     width: calc(100% - 200px);
     background-color: #fff;
@@ -82,6 +102,7 @@ body {
     flex-direction: column;
     text-align: center;
     cursor: pointer;
+    padding: 20px;
 }
 
 .s1-product:hover {
@@ -89,13 +110,13 @@ body {
 }
 
 .s1-product-title {
-    margin-top: 20px;
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .s1-product-reward {
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 /* 스텝 2 */
