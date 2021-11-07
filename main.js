@@ -77,6 +77,9 @@ function Step1({ goNext }) {
                     {ourProducts.map((p, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
                             {p.name}
+                            {p.rewards.map((r, idx) =>
+                                <p key={idx} className="s1-product-reward">{r}</p>
+                            )}
                         </div>
                     ))}
                 </div>

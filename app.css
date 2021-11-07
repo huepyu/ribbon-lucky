@@ -80,6 +80,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .s1-our-products-title {
@@ -98,14 +99,15 @@ body {
     width: 100%;
     border-radius: 20px;
     padding: 16px;
-    background-color: #5C8001;
+    background-color: #666;
     color: #fff;
     text-align: center;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .s1-our-product:hover {
-    background-color: #8dc400;
+    background-color: #aaa;
 }
 
 .s1-right {

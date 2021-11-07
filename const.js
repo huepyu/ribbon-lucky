@@ -91,13 +91,8 @@ const products = [
     },
     {
         id: 9,
-        name: "킹덤 디펜스 5단계: 빛 승리",
+        name: "킹덤 디펜스 5단계: 빛 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.lightningOrb2,
             reward.lightningOrb3,
         ]
@@ -111,13 +106,8 @@ const products = [
     },
     {
         id: 11,
-        name: "킹덤 디펜스 5단계: 어둠 승리",
+        name: "킹덤 디펜스 5단계: 어둠 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.darkBalloon2,
             reward.darkBalloon3,
         ]
@@ -131,13 +121,8 @@ const products = [
     },
     {
         id: 13,
-        name: "킹덤 디펜스 5단계: 불 승리",
+        name: "킹덤 디펜스 5단계: 불 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.fireCracker2,
             reward.fireCracker3,
         ]
@@ -151,13 +136,8 @@ const products = [
     },
     {
         id: 15,
-        name: "킹덤 디펜스 5단계: 물 승리",
+        name: "킹덤 디펜스 5단계: 물 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.waterBomb2,
             reward.waterBomb3,
         ]
@@ -171,13 +151,8 @@ const products = [
     },
     {
         id: 17,
-        name: "킹덤 디펜스 5단계: 나무 승리",
+        name: "킹덤 디펜스 5단계: 나무 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.leafDance2,
             reward.leafDance3,
         ]
@@ -191,92 +166,93 @@ const products = [
     },
     {
         id: 19,
-        name: "킹덤 디펜스 4단계: 빛 승리",
+        name: "킹덤 디펜스 5단계: 승리",
         rewards: [
             reward.kingdomPresent,
             reward.kingdomPresent,
             reward.kingdomPresent,
             reward.kingdomPresent,
-            reward.lightningOrb1,
+            reward.kingdomPresent,
         ]
     },
     {
         id: 20,
+        name: "킹덤 디펜스 4단계: 빛 승리 스킬북",
+        rewards: [
+            reward.lightningOrb1,
+        ]
+    },
+    {
+        id: 21,
         name: "킹덤 디펜스 4단계: 빛 패배",
         rewards: [
             reward.lightPage1,
         ]
     },
     {
-        id: 21,
-        name: "킹덤 디펜스 4단계: 어둠 승리",
+        id: 22,
+        name: "킹덤 디펜스 4단계: 어둠 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.darkBalloon1,
         ]
     },
     {
-        id: 22,
+        id: 23,
         name: "킹덤 디펜스 4단계: 어둠 패배",
         rewards: [
             reward.darkPage1,
         ]
     },
     {
-        id: 23,
-        name: "킹덤 디펜스 4단계: 불 승리",
+        id: 24,
+        name: "킹덤 디펜스 4단계: 불 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.fireCracker1,
         ]
     },
     {
-        id: 24,
+        id: 25,
         name: "킹덤 디펜스 4단계: 불 패배",
         rewards: [
             reward.firePage1,
         ]
     },
     {
-        id: 25,
-        name: "킹덤 디펜스 4단계: 물 승리",
+        id: 26,
+        name: "킹덤 디펜스 4단계: 물 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.waterBomb1,
         ]
     },
     {
-        id: 26,
+        id: 27,
         name: "킹덤 디펜스 4단계: 물 패배",
         rewards: [
             reward.waterPage1,
         ]
     },
     {
-        id: 27,
-        name: "킹덤 디펜스 4단계: 나무 승리",
+        id: 28,
+        name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
         rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
             reward.leafDance1,
         ]
     },
     {
-        id: 28,
+        id: 29,
         name: "킹덤 디펜스 4단계: 나무 패배",
         rewards: [
             reward.lightPage1,
         ]
     },
+    {
+        id: 30,
+        name: "킹덤 디펜스 4단계: 승리",
+        rewards: [
+            reward.kingdomPresent,
+            reward.kingdomPresent,
+            reward.kingdomPresent,
+            reward.kingdomPresent,
+        ]
+    }
 ]
