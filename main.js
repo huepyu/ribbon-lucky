@@ -2,7 +2,10 @@ function App() {
     const [step, setStep] = React.useState(1)
 
     return (
-        <h1>Hi There App! {step}</h1>    
+        <>
+            <div className="root-title">Hi There App! {step}</div>
+            <div className="root-content">Hello</div>
+        </>
     )
 }
 
