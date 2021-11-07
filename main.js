@@ -3,8 +3,8 @@ function App() {
 
     return (
         <>
-            <div className="root-title">Hi There App! {step}</div>
-            <div className="root-content">Hello Hello</div>
+            <div class="root-title">Hi There App! {step}</div>
+            <div class="root-content">Hello Hello</div>
         </>
     )
 }
