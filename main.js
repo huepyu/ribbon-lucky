@@ -41,8 +41,8 @@ function App() {
 function Step1({ goNext }) {
   return (
       <div className="step-1">
-          <div className="s1-left"></div>
-          <div className="s1-right"></div>
+          <div className="s1-left">1</div>
+          <div className="s1-right">2</div>
       </div>
   )  
 }
