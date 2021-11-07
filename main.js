@@ -47,9 +47,7 @@ function Step1({ goNext }) {
 
             </div>
             <div className="s1-right">
-                {step1Products.map(p => (
-                    <div>{p.name} {p.rewards.map(r => <p>{r}</p>)}</div>
-                ))}
+                
             </div>
         </div>
     )  
