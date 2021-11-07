@@ -54,6 +54,7 @@ body {
 
 .s1-left {
     width: 200px;
+    height: 100%;
     background-color: #ddd;
     display: flex;
     flex-direction: column;
@@ -72,8 +73,8 @@ body {
 
 .s1-our-product {
     width: 100%;
-    border-radius: 6px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 16px;
     background-color: #5C8001;
     color: #fff;
     margin-top: 10px;
