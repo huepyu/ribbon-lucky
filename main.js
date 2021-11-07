@@ -110,7 +110,7 @@ function Step1({ goNext, state, setState }) {
                     </div>
                 </div>
             </div>
-            <div className="next-btn" onClick={e => goNextStep}>저장 및 다음 단계로</div>
+            <div className="next-btn" onClick={e => goNextStep(e)}>저장 및 다음 단계로</div>
         </div>
     )  
 }
