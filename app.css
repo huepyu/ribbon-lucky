@@ -11,11 +11,11 @@ body {
 .root-title {
     height: 100px;
     font-size: 24px;
-    color: #000;
+    background-color: #000;
 }
 
 .root-content {
     height: calc(100vh - 100px);
-    color: #f0f;
+    background-color: #f0f;
 }
 
