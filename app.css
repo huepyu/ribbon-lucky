@@ -111,7 +111,7 @@ body {
 .s1-right {
     width: calc(100% - 200px);
     height: 100%;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     background-color: #fff;
     padding: 20px;
 }
