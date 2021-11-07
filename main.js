@@ -74,6 +74,7 @@ function Step1({ goNext }) {
                 <div className="s1-next-btn">다음 단계로</div>
             </div>
             <div className="s1-right">
+                <p className="s1-right-title">오늘 행운 상점의 상품을 순서대로 골라주세요.</p>
                 <div className="s1-products-grid">
                 {step1Products.map(p => (
                     <div key={p.id} className="s1-product" onClick={e => addProduct(e, p)}>
