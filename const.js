@@ -27,6 +27,15 @@ const reward = {
     treePage1: '나무의 마법 페이지 I',
 }
 
+const productType = {
+    normal: 'normal',
+    light: 'light',
+    dark: 'dark',
+    fire: 'fire',
+    water: 'water',
+    tree: 'tree',
+}
+
 const products = [
     {
         id: 1,
@@ -37,6 +46,7 @@ const products = [
             reward.blackDye,
             reward.blackDye,
         ],
+        type: 'normal',
     },
     {
         id: 2,
@@ -44,6 +54,7 @@ const products = [
         rewards: [
             reward.dingo,
         ],
+        type: 'normal',
     },
     {
         id: 3,
@@ -51,6 +62,7 @@ const products = [
         rewards: [
             reward.commonGemBox,
         ],
+        type: 'tree',
     },
     {
         id: 4,
@@ -58,6 +70,7 @@ const products = [
         rewards: [
             reward.increaseWood,
         ],
+        type: 'tree',
     },
     {
         id: 5,
@@ -65,21 +78,24 @@ const products = [
         rewards: [
             reward.increaseWood,
             reward.increaseWood,
-        ]
+        ],
+        type: 'tree',
     },
     {
         id: 6,
         name: "화염의 기사 라스 1단계",
         rewards: [
             reward.commonGemBox,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 7,
         name: "화염의 기사 라스 4단계",
         rewards: [
             reward.increaseFire,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 8,
@@ -87,7 +103,8 @@ const products = [
         rewards: [
             reward.increaseFire,
             reward.increaseFire,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 9,
@@ -95,14 +112,16 @@ const products = [
         rewards: [
             reward.lightningOrb2,
             reward.lightningOrb3,
-        ]
+        ],
+        type: 'light',
     },
     {
         id: 10,
         name: "킹덤 디펜스 5단계: 빛 패배",
         rewards: [
             reward.lightningOrb1,
-        ]
+        ],
+        type: 'light',
     },
     {
         id: 11,
@@ -110,14 +129,16 @@ const products = [
         rewards: [
             reward.darkBalloon2,
             reward.darkBalloon3,
-        ]
+        ],
+        type: 'dark',
     },
     {
         id: 12,
         name: "킹덤 디펜스 5단계: 어둠 패배",
         rewards: [
             reward.darkBalloon1,
-        ]
+        ],
+        type: 'dark',
     },
     {
         id: 13,
@@ -125,14 +146,16 @@ const products = [
         rewards: [
             reward.fireCracker2,
             reward.fireCracker3,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 14,
         name: "킹덤 디펜스 5단계: 불 패배",
         rewards: [
             reward.fireCracker1,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 15,
@@ -140,14 +163,16 @@ const products = [
         rewards: [
             reward.waterBomb2,
             reward.waterBomb3,
-        ]
+        ],
+        type: 'water',
     },
     {
         id: 16,
         name: "킹덤 디펜스 5단계: 물 패배",
         rewards: [
             reward.waterBomb1,
-        ]
+        ],
+        type: 'water',
     },
     {
         id: 17,
@@ -155,14 +180,16 @@ const products = [
         rewards: [
             reward.leafDance2,
             reward.leafDance3,
-        ]
+        ],
+        type: 'tree',
     },
     {
         id: 18,
         name: "킹덤 디펜스 5단계: 나무 패배",
         rewards: [
             reward.leafDance1,
-        ]
+        ],
+        type: 'tree',
     },
     {
         id: 19,
@@ -173,77 +200,88 @@ const products = [
             reward.kingdomPresent,
             reward.kingdomPresent,
             reward.kingdomPresent,
-        ]
+        ],
+        type: 'normal',
     },
     {
         id: 20,
         name: "킹덤 디펜스 4단계: 빛 승리 스킬북",
         rewards: [
             reward.lightningOrb1,
-        ]
+        ],
+        type: 'light',
     },
     {
         id: 21,
         name: "킹덤 디펜스 4단계: 빛 패배",
         rewards: [
             reward.lightPage1,
-        ]
+        ],
+        type: 'light',
     },
     {
         id: 22,
         name: "킹덤 디펜스 4단계: 어둠 승리 스킬북",
         rewards: [
             reward.darkBalloon1,
-        ]
+        ],
+        type: 'dark',
     },
     {
         id: 23,
         name: "킹덤 디펜스 4단계: 어둠 패배",
         rewards: [
             reward.darkPage1,
-        ]
+        ],
+        type: 'dark',
     },
     {
         id: 24,
         name: "킹덤 디펜스 4단계: 불 승리 스킬북",
         rewards: [
             reward.fireCracker1,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 25,
         name: "킹덤 디펜스 4단계: 불 패배",
         rewards: [
             reward.firePage1,
-        ]
+        ],
+        type: 'fire',
     },
     {
         id: 26,
         name: "킹덤 디펜스 4단계: 물 승리 스킬북",
         rewards: [
             reward.waterBomb1,
-        ]
+        ],
+        type: 'water',
     },
     {
         id: 27,
         name: "킹덤 디펜스 4단계: 물 패배",
         rewards: [
             reward.waterPage1,
-        ]
+        ],
+        type: 'water',
     },
     {
         id: 28,
         name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
         rewards: [
             reward.leafDance1,
-        ]
+        ],
+        type: 'tree',
     },
     {
         id: 29,
         name: "킹덤 디펜스 4단계: 나무 패배",
         rewards: [
             reward.lightPage1,
-        ]
+        ],
+        type: 'tree',
     },
     {
         id: 30,
@@ -253,6 +291,46 @@ const products = [
             reward.kingdomPresent,
             reward.kingdomPresent,
             reward.kingdomPresent,
-        ]
+        ],
+        type: 'common',
     }
+]
+
+const members = [
+    { id: 1, name: '단밤' },
+    { id: 2, name: '단밤' },
+    { id: 3, name: '단밤' },
+    { id: 4, name: '단밤' },
+    { id: 5, name: '단밤' },
+    { id: 6, name: '단밤' },
+    { id: 7, name: '단밤' },
+    { id: 8, name: '단밤' },
+    { id: 9, name: '단밤' },
+    { id: 10, name: '단밤' },
+    { id: 11, name: '단밤' },
+    { id: 12, name: '단밤' },
+    { id: 13, name: '단밤' },
+    { id: 14, name: '단밤' },
+    { id: 15, name: '단밤' },
+    { id: 16, name: '단밤' },
+    { id: 17, name: '단밤' },
+    { id: 18, name: '단밤' },
+    { id: 19, name: '단밤' },
+    { id: 20, name: '단밤' },
+    { id: 21, name: '단밤' },
+    { id: 22, name: '단밤' },
+    { id: 23, name: '단밤' },
+    { id: 24, name: '단밤' },
+    { id: 25, name: '단밤' },
+    { id: 26, name: '단밤' },
+    { id: 27, name: '단밤' },
+    { id: 28, name: '단밤' },
+    { id: 29, name: '단밤' },
+    { id: 30, name: '단밤' },
+    { id: 31, name: '단밤' },
+    { id: 32, name: '단밤' },
+    { id: 33, name: '단밤' },
+    { id: 34, name: '단밤' },
+    { id: 35, name: '단밤' },
+    { id: 36, name: '단밤' },
 ]
