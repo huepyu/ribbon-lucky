@@ -1,5 +1,12 @@
-alert('hi', ReactDOM)
+function App() {
+    const [step, setStep] = React.useState(1)
+
+    return (
+        <h1>Hi There App! {step}</h1>    
+    )
+}
+
 ReactDOM.render(
-    <h1>Hi There</h1>,
+    <App />,
     document.getElementById('root')
 )
