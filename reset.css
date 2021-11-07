@@ -4,6 +4,7 @@
 *::after {
   box-sizing: border-box;
   border: 0;
+  font-family: "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, sans-serif;
 }
 
 /* Remove default padding */

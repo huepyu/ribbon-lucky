@@ -17,9 +17,9 @@ function App() {
     return (
         <>
             <div className="root-title">
-                <button className="title-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
+                <button className="title-btn back-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
                 <span className="title-text">리본 행운상점 추첨</span>
-                <button className="title-btn" onClick={reset}>초기화</button>
+                <button className="title-btn reset-btn" onClick={reset}>초기화</button>
             </div>
             <div className="root-content">
                 {step === 1 && <div>1단계</div>}
