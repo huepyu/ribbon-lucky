@@ -75,16 +75,27 @@ body {
 }
 
 .s1-product {
-    background-color: #eee;
+    background-color: #333;
+    color: #fff;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.s1-product:hover {
+    background-color: #000;
 }
 
 .s1-product-title {
+    margin-top: 20px;
     font-size: 18px;
 }
 
 .s1-product-reward {
     font-size: 12px;
+    margin-top: 10px;
 }
 
 /* 스텝 2 */
