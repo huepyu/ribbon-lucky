@@ -48,40 +48,15 @@ body {
 
 /* 스텝 1 */
 .step-1 {
-    display: flex;
-    flex: 1;
-}
-
-.s1-left {
-    width: 200px;
-    height: 100%;
-    background-color: #ddd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.s1-our-products {
-    height: calc(100% - 50px);
-    padding: 20px;
-}
-
-.s1-our-products-title {
-    font-size: 18px;
-    color: #000;
-}
-
-.s1-our-product {
     width: 100%;
-    border-radius: 20px;
-    padding: 16px;
-    background-color: #5C8001;
-    color: #fff;
-    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: column;
 }
 
-.s1-our-product:hover {
-    background-color: #8dc400;
+.s1-main {
+    width: 100%;
+    height: calc(100% - 50px);
 }
 
 .s1-next-btn {
@@ -95,6 +70,42 @@ body {
     align-items: center;
 }
 
+.s1-left {
+    width: 200px;
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.s1-our-products-title {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+
+.s1-delete-desc {
+    text-align: center;
+    font-size: 10px;
+    color: #aaa;
+}
+
+.s1-our-product {
+    width: 100%;
+    border-radius: 20px;
+    padding: 16px;
+    background-color: #5C8001;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.s1-our-product:hover {
+    background-color: #8dc400;
+}
+
 .s1-right {
     width: calc(100% - 200px);
     height: 100%;
@@ -105,6 +116,8 @@ body {
 
 .s1-right-title {
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .s1-products-grid {

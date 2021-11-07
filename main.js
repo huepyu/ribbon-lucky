@@ -60,10 +60,13 @@ function Step1({ goNext }) {
 
     return (
         <div className="step-1">
-            <div className="s1-left">
-                <div className="s1-our-products">
+            <div className="s1-main">
+                <div className="s1-left">
                     <p className="s1-our-products-title">
                         행운 상점 추첨 순서
+                    </p>
+                    <p className="s1-delete-desc">
+                        클릭 시 삭제됩니다.
                     </p>
                     {ourProducts.map((p, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
@@ -71,21 +74,21 @@ function Step1({ goNext }) {
                         </div>
                     ))}
                 </div>
-                <div className="s1-next-btn">다음 단계로</div>
-            </div>
-            <div className="s1-right">
-                <p className="s1-right-title">오늘 행운 상점의 상품을 순서대로 골라주세요.</p>
-                <div className="s1-products-grid">
-                {step1Products.map(p => (
-                    <div key={p.id} className="s1-product" onClick={e => addProduct(e, p)}>
-                        <p className="s1-product-title">{p.name}</p>
-                        {p.rewards.map((r, idx) =>
-                            <p key={idx} className="s1-product-reward">{r}</p>
-                        )}
+                <div className="s1-right">
+                    <p className="s1-right-title">오늘 행운 상점의 상품을 순서대로 골라주세요.</p>
+                    <div className="s1-products-grid">
+                    {step1Products.map(p => (
+                        <div key={p.id} className="s1-product" onClick={e => addProduct(e, p)}>
+                            <p className="s1-product-title">{p.name}</p>
+                            {p.rewards.map((r, idx) =>
+                                <p key={idx} className="s1-product-reward">{r}</p>
+                            )}
+                        </div>
+                    ))}
                     </div>
-                ))}
                 </div>
             </div>
+            <div className="s1-next-btn">다음 단계로</div>
         </div>
     )  
 }
