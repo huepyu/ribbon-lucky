@@ -41,7 +41,32 @@ body {
 
 /* 컨텐츠 */
 .root-content {
+    width: 100%;
     height: calc(100vh - 100px);
     background-color: #fff;
 }
 
+/* 스텝 1 */
+.step-1 {
+    display: flex;
+}
+
+.s1-left {
+    width: 200px;
+    background-color: #ddd;
+}
+
+.s1-right {
+    width: calc(100% - 200px);
+    background-color: #f0f;
+}
+
+/* 스텝 2 */
+.step-2 {
+
+}
+
+/* 스텝 3 */
+.step-3 {
+
+}

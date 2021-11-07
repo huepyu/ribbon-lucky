@@ -14,6 +14,13 @@ function App() {
         }
     }
 
+    function goNext(e) {
+        e.preventDefault()
+        if (step !== 3) {
+            setStep(v => v + 1)
+        }
+    }
+
     return (
         <>
             <div className="root-title">
@@ -22,12 +29,32 @@ function App() {
                 <button className="title-btn reset-btn" onClick={reset}>초기화</button>
             </div>
             <div className="root-content">
-                {step === 1 && <div>1단계</div>}
+                {step === 1 && <Step1 goNext={goNext} />}
                 {step === 2 && <div>2단계</div>}
                 {step === 3 && <div>3단계</div>}
             </div>
         </>
     )
+}
+
+// 스텝 1: 상품 등록 단계
+function Step1({ goNext }) {
+  return (
+      <div className="step-1">
+          <div className="s1-left"></div>
+          <div className="s1-right"></div>
+      </div>
+  )  
+}
+
+// 스텝 2: 인원 선별 단계
+function Step2() {
+
+}
+
+// 스텝 3: 추첨 단계
+function Step3() {
+
 }
 
 ReactDOM.render(
