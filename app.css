@@ -1,4 +1,21 @@
 body {
-    background-color: black;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
 }
+
+#root {
+    display: flex;
+    flex-direction: row;
+}
+
+.root-title {
+    height: 100px;
+    font-size: 24px;
+    color: #000;
+}
+
+.root-content {
+    height: calc(100vh - 100px);
+    color: #f0f;
+}
+
