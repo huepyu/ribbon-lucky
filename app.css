@@ -14,12 +14,13 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background-color: #f0f0f0;
+    background-color: #222;
     padding: 20px;
 }
 
 .title-text {
     font-size: 36px;
+    color: #fff;
 }
 
 .title-btn {
@@ -30,7 +31,7 @@ body {
 }
 
 .reset-btn {
-    background-color: #ddd;
+    background-color: #333;
     color: #666;
 }
 
