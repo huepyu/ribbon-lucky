@@ -1,5 +1,8 @@
+const STORAGE_KEY = 'STORAGE_KEY'
+
 function App() {
     const [step, setStep] = React.useState(1)
+    const [state, setState] = React.useState([])
 
     function reset(e) {
         e.preventDefault()
@@ -21,6 +24,13 @@ function App() {
         }
     }
 
+    React.useEffect(() => {
+        const state = JSON.stringify(sessionStorage.getItem(STORAGE_KEY))
+        if (state) {
+            setState(state)
+        }
+    }, [])
+
     return (
         <>
             <div className="root-title">
@@ -29,17 +39,17 @@ function App() {
                 <button className="title-btn reset-btn" onClick={reset}>초기화</button>
             </div>
             <div className="root-content">
-                {step === 1 && <Step1 goNext={goNext} />}
-                {step === 2 && <div>2단계</div>}
-                {step === 3 && <div>3단계</div>}
+                {step === 1 && <Step1 goNext={goNext} state={state} setState={setState} />}
+                {step === 2 && <Step2 goNext={goNext} state={state} setState={setState} />}
+                {step === 3 && <Step3 state={state} setState={setState} />}
             </div>
         </>
     )
 }
 
 // 스텝 1: 상품 등록 단계
-function Step1({ goNext }) {
-    const [ourProducts, setOurProducts] = React.useState([])
+function Step1({ goNext, state, setState }) {
+    const [ourProducts, setOurProducts] = React.useState(state)
 
     const step1Products = React.useMemo(() => products, [])
 
@@ -60,13 +70,14 @@ function Step1({ goNext }) {
 
     function goNextStep(e) {
         e.preventDefault()
-        sessionStorage.setItem('products', JSON.stringify(ourProducts.map(p => p.id)))
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ourProducts))
+        setState(ourProducts)
         goNext()
     }
 
     return (
-        <div className="step-1">
-            <div className="s1-main">
+        <div className="step">
+            <div className="main">
                 <div className="s1-left">
                     <p className="s1-our-products-title">
                         행운 상점 추첨 순서
@@ -97,14 +108,33 @@ function Step1({ goNext }) {
                     </div>
                 </div>
             </div>
-            <div className="s1-next-btn" onClick={e => goNextStep}>다음 단계로</div>
+            <div className="next-btn" onClick={e => goNextStep}>저장 및 다음 단계로</div>
         </div>
     )  
 }
 
 // 스텝 2: 인원 선별 단계
-function Step2() {
+function Step2({ goNext, state, setState }) {
+    const [products, setProducts] = React.useState(state)
 
+    function goNextStep(e) {
+        e.preventDefault()
+        sessionStorage.setItem('products', JSON.stringify(ourProducts.map(p => p.id)))
+        goNext()
+    }
+
+    return (
+        <div className="step">
+            <div className="main">
+                {products.map(p => {
+                    <div idx={p.id} className="s2-product">
+                        <div className="s2-product-title">{p.name}</div>
+                    </div>
+                })}
+            </div>
+            <div className="next-btn" onClick={e => goNextStep}>다음 단계로</div>
+        </div>
+    )
 }
 
 // 스텝 3: 추첨 단계
