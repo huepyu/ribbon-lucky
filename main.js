@@ -50,12 +50,14 @@ function App() {
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext, state, setState }) {
     const [ourProducts, setOurProducts] = React.useState(state)
+    const leftRef = React.useRef(null)
 
     const step1Products = React.useMemo(() => products, [])
 
     function addProduct(e, product) {
         e.preventDefault()
         setOurProducts(op => [...op, product])
+        leftRef.current.scrollTo(0, Infinity)
     }
 
     function deleteProduct(e, idx) {
@@ -78,7 +80,7 @@ function Step1({ goNext, state, setState }) {
     return (
         <div className="step">
             <div className="main">
-                <div className="s1-left">
+                <div className="s1-left" ref={leftRef}>
                     <p className="s1-our-products-title">
                         행운 상점 추첨 순서
                     </p>
