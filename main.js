@@ -57,7 +57,9 @@ function Step1({ goNext, state, setState }) {
     function addProduct(e, product) {
         e.preventDefault()
         setOurProducts(op => [...op, product])
-        leftRef.current.scrollTo(0, Infinity)
+        setTimeout(() => {
+            leftRef.current.scrollTop = leftRef.current.scrollHeight;
+        }, 50)
     }
 
     function deleteProduct(e, idx) {
@@ -110,7 +112,7 @@ function Step1({ goNext, state, setState }) {
                     </div>
                 </div>
             </div>
-            <div className="next-btn" onClick={e => goNextStep(e)}>저장 및 다음 단계로</div>
+            <div className="next-btn" onClick={e => goNextStep(e)}>저장 및 다음 단계</div>
         </div>
     )  
 }
