@@ -58,6 +58,12 @@ function Step1({ goNext }) {
         )
     }
 
+    function goNextStep(e) {
+        e.preventDefault()
+        sessionStorage.setItem('products', JSON.stringify(ourProducts.map(p => p.id)))
+        goNext()
+    }
+
     return (
         <div className="step-1">
             <div className="s1-main">
@@ -88,7 +94,7 @@ function Step1({ goNext }) {
                     </div>
                 </div>
             </div>
-            <div className="s1-next-btn">다음 단계로</div>
+            <div className="s1-next-btn" onClick={goNextStep}>다음 단계로</div>
         </div>
     )  
 }
