@@ -39,7 +39,7 @@ function App() {
 
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext }) {
-    const [step1Products] = useMemo(() => products, [])
+    const [step1Products] = React.useMemo(() => products, [])
 
     return (
         <div className="step-1">
@@ -47,7 +47,11 @@ function Step1({ goNext }) {
 
             </div>
             <div className="s1-right">
-                
+                {step1Products.map(p => (
+                    <div key={p.id}>
+                        {p.name} {p.rewards.map((r, idx) => <p key={idx}>{r}</p>)}
+                    </div>
+                ))}
             </div>
         </div>
     )  
