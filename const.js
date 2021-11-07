@@ -27,6 +27,8 @@ const reward = {
     treePage1: '나무의 마법 페이지 I',
 }
 
+alert(1)
+
 const products = [
     {
         id: 1,
@@ -280,3 +282,5 @@ const products = [
         ]
     },
 ]
+
+alert(2)

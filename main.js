@@ -40,6 +40,7 @@ function App() {
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext }) {
     const [step1Products] = React.useMemo(() => products, [])
+    alert(3)
 
     return (
         <div className="step-1">
