@@ -47,11 +47,13 @@ function Step1({ goNext }) {
 
             </div>
             <div className="s1-right">
+                <div className="s1-products-grid">
                 {step1Products.map(p => (
-                    <div key={p.id}>
+                    <div key={p.id} className="s1-product">
                         {p.name} {p.rewards.map((r, idx) => <p key={idx}>{r}</p>)}
                     </div>
                 ))}
+                </div>
             </div>
         </div>
     )  
