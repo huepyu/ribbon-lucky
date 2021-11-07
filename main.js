@@ -73,6 +73,7 @@ function Step1({ goNext, state, setState }) {
     }
 
     function goNextStep(e) {
+        console.log(e, state)
         e.preventDefault()
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ourProducts))
         setState(ourProducts)
