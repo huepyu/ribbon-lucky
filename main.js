@@ -62,6 +62,9 @@ function Step1({ goNext }) {
         <div className="step-1">
             <div className="s1-left">
                 <div className="s1-our-products">
+                    <p className="s1-our-products-title">
+                        행운 상점 추첨 순서
+                    </p>
                     {ourProducts.map((p, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
                             {p.name}
