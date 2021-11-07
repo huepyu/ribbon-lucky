@@ -18,6 +18,11 @@ body {
     padding: 20px;
 }
 
+.dummy-btn {
+    width: 80px;
+    height: 40px;
+}
+
 .title-text {
     font-size: 24px;
 }
@@ -28,6 +33,7 @@ body {
     background-color: #ddd;
     border-radius: 5px;
     margin-left: 10px;
+    color: #aaa;
 }
 
 /* 컨텐츠 */

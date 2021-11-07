@@ -10,7 +10,7 @@ function App() {
     return (
         <>
             <div className="root-title">
-                <div></div>
+                <div className="dummy-btn"></div>
                 <span className="title-text">리본 행운상점 추첨</span>
                 <button className="title-reset-btn" onClick={reset}>초기화</button>
             </div>
