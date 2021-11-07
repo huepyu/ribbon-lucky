@@ -1,10 +1,22 @@
 function App() {
     const [step, setStep] = React.useState(1)
 
+    function reset(e) {
+        e.preventDefault()
+        sessionStorage.clear()
+        setStep(1)
+    }
+
     return (
         <>
-            <div className="root-title">Hi There App! {step}</div>
-            <div className="root-content">Hello Hello, Yo</div>
+            <div className="root-title">
+                <div></div>
+                <span className="title-text">리본 행운상점 추첨</span>
+                <button className="title-reset-btn" onClick={reset}>초기화</button>
+            </div>
+            <div className="root-content">
+                
+            </div>
         </>
     )
 }

@@ -3,19 +3,36 @@ body {
     color: #000;
 }
 
-/* #root {
+#root {
     display: flex;
     flex-direction: column;
-} */
-
-/* .root-title {
-    height: 100px;
-    font-size: 24px;
-    background-color: #000;
 }
 
+/* 타이틀 */
+.root-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.title-text {
+    font-size: 24px;
+}
+
+.title-reset-btn {
+    width: 80px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* 컨텐츠 */
 .root-content {
     height: calc(100vh - 100px);
-    background-color: #f0f;
+    background-color: #fff;
 }
- */
+
