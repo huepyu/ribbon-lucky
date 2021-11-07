@@ -63,6 +63,7 @@ body {
 .s1-right {
     width: calc(100% - 200px);
     background-color: #fff;
+    padding: 20px;
 }
 
 .s1-products-grid {
@@ -74,7 +75,16 @@ body {
 }
 
 .s1-product {
-    background-color: #aaa;
+    background-color: #eee;
+    border-radius: 30px;
+}
+
+.s1-product-title {
+    font-size: 18px;
+}
+
+.s1-product-reward {
+    font-size: 12px;
 }
 
 /* 스텝 2 */

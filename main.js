@@ -39,7 +39,14 @@ function App() {
 
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext }) {
+    const [ourProducts, setOurProducts] = React.useState([])
+
     const step1Products = React.useMemo(() => products, [])
+
+    function addProduct(e, product) {
+        e.preventDefault()
+        setOurProducts(op => [...op, product])
+    }
 
     return (
         <div className="step-1">
@@ -49,8 +56,11 @@ function Step1({ goNext }) {
             <div className="s1-right">
                 <div className="s1-products-grid">
                 {step1Products.map(p => (
-                    <div key={p.id} className="s1-product">
-                        {p.name} {p.rewards.map((r, idx) => <p key={idx}>{r}</p>)}
+                    <div key={p.id} className="s1-product" onClick={e => addProduct(e, p)}>
+                        <p className="s1-product-title">{p.name}</p>
+                        {p.rewards.map((r, idx) =>
+                            <p key={idx} className="s1-product-reward">{r}</p>
+                        )}
                     </div>
                 ))}
                 </div>
