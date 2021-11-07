@@ -12,6 +12,10 @@ ol[class] {
   padding: 0;
 }
 
+button:disabled {
+  opacity: 0.3;
+}
+
 /* Remove default margin */
 body,
 h1,

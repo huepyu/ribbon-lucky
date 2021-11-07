@@ -18,13 +18,8 @@ body {
     padding: 20px;
 }
 
-.dummy-btn {
-    width: 80px;
-    height: 40px;
-}
-
 .title-text {
-    font-size: 48px;
+    font-size: 36px;
 }
 
 .title-btn {
@@ -34,6 +29,14 @@ body {
     border-radius: 5px;
     margin-left: 10px;
     color: #aaa;
+}
+
+.reset-btn {
+
+}
+
+.back-btn {
+
 }
 
 /* 컨텐츠 */
