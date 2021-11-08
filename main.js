@@ -24,7 +24,8 @@ function App() {
     }
 
     React.useEffect(() => {
-        const state = JSON.stringify(sessionStorage.getItem(STORAGE_KEY))
+        const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
+        console.log(state)
         if (state) {
             setState(state)
         }
