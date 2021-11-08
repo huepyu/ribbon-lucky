@@ -107,7 +107,7 @@ function Step1({ goNext, state, setState }) {
                     </div>
                 </div>
             </div>
-            <div className="next-btn" onClick={goNext}>저장 및 다음 단계</div>
+            <button className="next-btn" disabled={!state.length} onClick={goNext}>저장 및 다음 단계</button>
         </div>
     )  
 }
@@ -119,13 +119,13 @@ function Step2({ goNext, state, setState }) {
     return (
         <div className="step">
             <div className="main">
-                {state.map(p => {
+                {state.map(p =>
                     <div key={p.id} className="s2-product">
                         <div className="s2-product-title">{p.name}</div>
                     </div>
-                })}
+                )}
             </div>
-            <div className="next-btn" onClick={goNext}>다음 단계로</div>
+            <button className="next-btn" disabled={true} onClick={goNext}>저장 및 다음 단계</button>
         </div>
     )
 }

@@ -67,6 +67,10 @@ body {
     cursor: pointer;
 }
 
+.next-btn:disabled {
+    opacity: 0.3;
+}
+
 .light {
     background-color: #F5E960;
     color: #000 !important;
