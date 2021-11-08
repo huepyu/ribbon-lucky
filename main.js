@@ -114,6 +114,8 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
+    console.log(state)
+
     return (
         <div className="step">
             <div className="main">
