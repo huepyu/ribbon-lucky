@@ -212,18 +212,23 @@ body {
     color: #fff;
 }
 
+.s2-dup {
+    opacity: 0.2;
+}
+
 .s2-product:not(:first-child) {
     margin-left: 10px;
 }
 
 .s2-product-title {
     font-weight: bold;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 .s2-product-reward {
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .s2-target-btns {
