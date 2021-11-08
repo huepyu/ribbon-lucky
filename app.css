@@ -195,6 +195,7 @@ body {
 .s2-wrapper {
     overflow-x: scroll;
     padding: 20px;
+    flex: none !important;
 }
 
 .s2-product {
