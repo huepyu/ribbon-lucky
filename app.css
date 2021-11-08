@@ -195,7 +195,6 @@ body {
 .s2-wrapper {
     overflow-x: scroll;
     padding: 20px;
-    flex: none !important;
 }
 
 .s2-product {
@@ -204,12 +203,13 @@ body {
     padding: 20px;
     border-radius: 20px;
     display: flex;
+    flex: none;
     flex-direction: column;
     align-items: center;
     color: #fff;
 }
 
-.s2-product:not(:first) {
+.s2-product:not(:first-child) {
     margin-left: 10px;
 }
 
