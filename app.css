@@ -192,6 +192,11 @@ body {
 }
 
 /* 스텝 2 */
+.s2-wrapper {
+    overflow-x: scroll;
+    padding: 20px;
+}
+
 .s2-product {
     width: 300px;
     height: 100%;
