@@ -10,7 +10,10 @@ function App() {
     function reset(e) {
         e.preventDefault()
         sessionStorage.clear()
-        setState([])
+        setState({
+            products: [],
+            productsMembersMap: {},
+        })
         setStep(1)
     }
 
