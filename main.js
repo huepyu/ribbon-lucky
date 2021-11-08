@@ -2,7 +2,10 @@ const STORAGE_KEY = 'STORAGE_KEY'
 
 function App() {
     const [step, setStep] = React.useState(1)
-    const [state, setState] = React.useState([])
+    const [state, setState] = React.useState({
+        products: [],
+        productsMembersMap: {},
+    })
 
     function reset(e) {
         e.preventDefault()
@@ -28,7 +31,6 @@ function App() {
 
     React.useEffect(() => {
         const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
-        console.log(state)
         if (state) {
             setState(state)
         }
@@ -58,7 +60,10 @@ function Step1({ goNext, state, setState }) {
 
     function addProduct(e, product) {
         e.preventDefault()
-        setState(op => [...op, product])
+        setState(v => ({
+            ...v,
+            products: [...v.products, product],
+        }))
         setTimeout(() => {
             leftRef.current.scrollTop = leftRef.current.scrollHeight;
         }, 50)
@@ -66,12 +71,13 @@ function Step1({ goNext, state, setState }) {
 
     function deleteProduct(e, idx) {
         e.preventDefault()
-        setState(op => 
-            [
-                ...op.slice(0, idx),
-                ...op.slice(idx + 1)
+        setState(v => ({
+            ...v,
+            products: [
+                ...v.products.slice(0, idx),
+                ...v.products.slice(idx + 1)
             ]
-        )
+        }))
     }
 
     return (
@@ -84,7 +90,7 @@ function Step1({ goNext, state, setState }) {
                     <p className="s1-delete-desc">
                         클릭 시 삭제됩니다.
                     </p>
-                    {state.map((p, idx) => (
+                    {state.map(({ products: p }, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
                             {p.name}
                             {p.rewards.map((r, idx) =>
@@ -119,7 +125,7 @@ function Step2({ goNext, state, setState }) {
     return (
         <div className="step">
             <div className="main s2-wrapper">
-                {state.map((p, idx) =>
+                {state.map(({ products: p }, idx) =>
                     <div key={idx} className={`s2-product ${p.type}`}>
                         <div className="s2-product-title">{p.name}</div>
                         <div className="s2-product-rewards">
