@@ -120,7 +120,7 @@ function Step2({ goNext, state, setState }) {
         <div className="step">
             <div className="main">
                 {state.map(p =>
-                    <div key={p.id} className="s2-product">
+                    <div key={p.id} className={`s2-product ${s.type}`}>
                         <div className="s2-product-title">{p.name}</div>
                     </div>
                 )}
