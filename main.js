@@ -36,11 +36,22 @@ function App() {
         }
     }, [])
 
+    function getStepText() {
+        switch (step) {
+            case 1: return '상품 선택 단계'
+            case 2: return '추첨 대상 선별 단계'
+            case 3: return '추첨 단계'
+        }
+    }
+
     return (
         <>
             <div className="root-title">
                 <button className="title-btn back-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
-                <span className="title-text">리본 행운상점 추첨</span>
+                <div>
+                    <p className="title-text">리본 행운상점 추첨</p>
+                    <p className="title-step">{getStepText()}</p>
+                </div>
                 <button className="title-btn reset-btn" onClick={reset}>초기화</button>
             </div>
             <div className="root-content">

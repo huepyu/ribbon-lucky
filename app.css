@@ -24,6 +24,12 @@ body {
     color: #fff;
 }
 
+.title-step {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #fff;
+}
+
 .title-btn {
     width: 60px;
     height: 32px;
@@ -75,10 +81,6 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-.next-btn:disabled {
-    opacity: 0.3;
 }
 
 .light {
