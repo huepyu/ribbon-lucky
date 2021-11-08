@@ -17,8 +17,7 @@ function App() {
         }
     }
 
-    function goNext(e) {
-        e.preventDefault()
+    function goNext() {
         if (step !== 3) {
             setStep(v => v + 1)
         }
