@@ -127,6 +127,9 @@ function Step2({ goNext, state, setState }) {
                                 <p key={idx} className="s2-product-reward">{r}</p>
                             ))}
                         </div>
+                        <div className="s2-target-btns">
+                            
+                        </div>
                     </div>
                 )}
             </div>
