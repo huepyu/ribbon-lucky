@@ -7,6 +7,7 @@ function App() {
     function reset(e) {
         e.preventDefault()
         sessionStorage.clear()
+        setState([])
         setStep(1)
     }
 
@@ -113,12 +114,10 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    const [products, setProducts] = React.useState(state)
-
     return (
         <div className="step">
             <div className="main">
-                {products.map(p => {
+                {state.map(p => {
                     <div idx={p.id} className="s2-product">
                         <div className="s2-product-title">{p.name}</div>
                     </div>

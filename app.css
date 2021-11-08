@@ -29,6 +29,7 @@ body {
     border-radius: 10px;
     margin-left: 10px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .reset-btn {
