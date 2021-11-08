@@ -17,11 +17,13 @@ function App() {
         }
     }
 
-    function goNext() {
+    const goNext = React.useCallback((e) => {
+        e.preventDefault()
         if (step !== 3) {
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state))
             setStep(v => v + 1)
         }
-    }
+    }, [state, step])
 
     React.useEffect(() => {
         const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
@@ -49,14 +51,13 @@ function App() {
 
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext, state, setState }) {
-    const [ourProducts, setOurProducts] = React.useState(state)
     const leftRef = React.useRef(null)
 
     const step1Products = React.useMemo(() => products, [])
 
     function addProduct(e, product) {
         e.preventDefault()
-        setOurProducts(op => [...op, product])
+        setState(op => [...op, product])
         setTimeout(() => {
             leftRef.current.scrollTop = leftRef.current.scrollHeight;
         }, 50)
@@ -64,20 +65,12 @@ function Step1({ goNext, state, setState }) {
 
     function deleteProduct(e, idx) {
         e.preventDefault()
-        setOurProducts(op => 
+        setState(op => 
             [
                 ...op.slice(0, idx),
                 ...op.slice(idx + 1)
             ]
         )
-    }
-
-    function goNextStep(e) {
-        console.log(e, state)
-        e.preventDefault()
-        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ourProducts))
-        setState(ourProducts)
-        goNext()
     }
 
     return (
@@ -113,7 +106,7 @@ function Step1({ goNext, state, setState }) {
                     </div>
                 </div>
             </div>
-            <div className="next-btn" onClick={e => goNextStep(e)}>저장 및 다음 단계</div>
+            <div className="next-btn" onClick={goNext}>저장 및 다음 단계</div>
         </div>
     )  
 }
@@ -121,12 +114,6 @@ function Step1({ goNext, state, setState }) {
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
     const [products, setProducts] = React.useState(state)
-
-    function goNextStep(e) {
-        e.preventDefault()
-        sessionStorage.setItem('products', JSON.stringify(ourProducts.map(p => p.id)))
-        goNext()
-    }
 
     return (
         <div className="step">
@@ -137,7 +124,7 @@ function Step2({ goNext, state, setState }) {
                     </div>
                 })}
             </div>
-            <div className="next-btn" onClick={e => goNextStep}>다음 단계로</div>
+            <div className="next-btn" onClick={goNext}>다음 단계로</div>
         </div>
     )
 }
