@@ -83,7 +83,7 @@ function Step1({ goNext, state, setState }) {
                     <p className="s1-delete-desc">
                         클릭 시 삭제됩니다.
                     </p>
-                    {ourProducts.map((p, idx) => (
+                    {state.map((p, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
                             {p.name}
                             {p.rewards.map((r, idx) =>
