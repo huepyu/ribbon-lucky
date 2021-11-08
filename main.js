@@ -131,7 +131,7 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    const [checkeds, setCheckeds] = React.useState(() => {
+    const [dups, setDups] = React.useState(() => {
         const idSet = new Set()
         const list = state.products.map(p => {
             const id = p.id
@@ -147,7 +147,7 @@ function Step2({ goNext, state, setState }) {
         <div className="step">
             <div className="main s2-wrapper">
                 {state.products.map((p, idx) =>
-                    <div key={idx} className={`s2-product ${p.type} ${checkeds[idx] && 's2-dup'}`}>
+                    <div key={idx} className={`s2-product ${p.type} ${dups[idx] && 's2-dup'}`}>
                         <div className="s2-product-title">{p.name}</div>
                         <div className="s2-product-rewards">
                             {p.rewards.map((r, idx) => (
@@ -160,7 +160,7 @@ function Step2({ goNext, state, setState }) {
                     </div>
                 )}
             </div>
-            <button className="next-btn" disabled={checkeds.every(v => v)} onClick={goNext}>저장 및 다음 단계</button>
+            <button className="next-btn" onClick={goNext}>저장 및 다음 단계</button>
         </div>
     )
 }
