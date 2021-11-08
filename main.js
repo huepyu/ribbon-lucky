@@ -90,7 +90,7 @@ function Step1({ goNext, state, setState }) {
                     <p className="s1-delete-desc">
                         클릭 시 삭제됩니다.
                     </p>
-                    {state.map(({ products: p }, idx) => (
+                    {state.products.map((p, idx) => (
                         <div key={idx} className="s1-our-product" onClick={e => deleteProduct(e, idx)}>
                             {p.name}
                             {p.rewards.map((r, idx) =>
@@ -125,7 +125,7 @@ function Step2({ goNext, state, setState }) {
     return (
         <div className="step">
             <div className="main s2-wrapper">
-                {state.map(({ products: p }, idx) =>
+                {state.products.map((p, idx) =>
                     <div key={idx} className={`s2-product ${p.type}`}>
                         <div className="s2-product-title">{p.name}</div>
                         <div className="s2-product-rewards">
