@@ -208,6 +208,10 @@ body {
     color: #fff;
 }
 
+.s2-product:not(:first) {
+    margin-left: 10px;
+}
+
 .s2-product-title {
     
 }
