@@ -122,6 +122,11 @@ function Step2({ goNext, state, setState }) {
                 {state.map(p =>
                     <div key={p.id} className={`s2-product ${p.type}`}>
                         <div className="s2-product-title">{p.name}</div>
+                        <div className="s2-product-rewards">
+                            {p.rewards.map((r, idx) => (
+                                <p key={idx} className="s2-product-reward">{r}</p>
+                            ))}
+                        </div>
                     </div>
                 )}
             </div>
