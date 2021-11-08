@@ -214,7 +214,11 @@ body {
 }
 
 .s2-product-title {
-    
+    margin-bottom: 20px;
+}
+
+.s2-product-reward {
+    margin-bottom: 10px;
 }
 
 /* 스텝 3 */
