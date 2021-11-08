@@ -141,6 +141,7 @@ function Step2({ goNext, state, setState }) {
             idSet.add(id)
             return false
         })
+        return list
     })
 
     return (
