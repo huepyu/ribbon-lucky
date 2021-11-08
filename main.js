@@ -113,15 +113,13 @@ function Step1({ goNext, state, setState }) {
                     </div>
                 </div>
             </div>
-            <button className="next-btn" disabled={!state.length} onClick={goNext}>저장 및 다음 단계</button>
+            <button className="next-btn" disabled={!state.products.length} onClick={goNext}>저장 및 다음 단계</button>
         </div>
     )  
 }
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    console.log(state)
-
     return (
         <div className="step">
             <div className="main s2-wrapper">
