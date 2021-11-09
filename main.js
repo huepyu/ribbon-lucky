@@ -292,7 +292,7 @@ function Step3({ state, setState }) {
     })
 
     const rewardDivRef = React.useRef(null)
-    const rewardsIdxRef = React.useRef(state.drawer.length ?? 0)
+    const rewardsIdxRef = React.useRef(state.drawers.length ?? 0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
     const [drawingState, setDrawingState] = React.useState({
         drawerId: null,
