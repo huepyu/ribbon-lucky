@@ -266,13 +266,28 @@ function Step2({ goNext, state, setState }) {
 
 // 스텝 3: 추첨 단계
 function Step3({ state, setState }) {
-    const [currentProduct, setCurrentProduct] = React.useState(null)
+    const step3Rewards = React.useMemo(() => {
+        const rewards = []
+        state.products.forEach(product => {
+            product.rewards.forEach(reward => {
+                step3Rewards.push({
+                    reward,
+                    product,
+                })
+            })
+        })
+        return rewards
+    })
+
+    const rewardsIdx = React.useRef(0)
+    const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdx.current])
 
     return (
         <div className="step">
             <div className="step-3">
                 <div className="s3-products">
-
+                    {currentReward.product.name}
+                    {currentReward.reward}
                 </div>
                 <div className="s3-members">
 
