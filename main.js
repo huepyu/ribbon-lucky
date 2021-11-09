@@ -395,10 +395,12 @@ function Step3({ state, setState }) {
 
             setCurrentReward(nextReward)
             setDrawingState(v => {
+                console.log(nextReward.group, v.currentGroup, nextReward.product.group)
+
                 return {
                     ...v,
                     drawerId: null,
-                    currentGroup: nextReward.group,
+                    currentGroup: nextReward.product.group,
                     targetIds: v.currentGroup !== nextReward.product.group
                         ? []
                         : v.targetIds.filter(id => id !== v.drawerId)
