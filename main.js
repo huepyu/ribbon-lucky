@@ -134,6 +134,8 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
+    console.log(state)
+
     const idSet = React.useRef(new Set())
     const [dups, setDups] = React.useState(() => {
         const list = state.products.map(p => {
@@ -146,6 +148,9 @@ function Step2({ goNext, state, setState }) {
         })
         return list
     })
+
+    console.log(idSet)
+    console.log(dups)
 
     React.useEffect(() => {
         const productsMembersMap = {}
