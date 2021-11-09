@@ -428,7 +428,7 @@ body {
 .s3-members-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-auto-rows: minmax(80px, auto);
+    grid-auto-rows: minmax(70px, auto);
     column-gap: 4px;
     row-gap: 4px;
     padding: 8px;
@@ -466,5 +466,5 @@ body {
 }
 
 .s3-member-reward {
-    font-size: 12px;
+    font-size: 10px;
 }

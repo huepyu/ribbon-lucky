@@ -377,6 +377,7 @@ function Step3({ state, setState }) {
             }
         })
 
+        rewardDivRef.current.classList.add('s3-disappear')
         setTimeout(() => {
             setCurrentReward(step3Rewards[rewardsIdxRef.current])
             setTimeout(() => {
