@@ -292,21 +292,30 @@ body {
     height: 40px;
     border-radius: 10px;
     padding: 0 14px;
-    background-color: #222;
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
 }
 
+.s2-member-btn {
+    height: 30px;
+    border-radius: 10px;
+    padding: 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
 .s2-include-btn {
-    background-color: #55D6C2;
+    background-color: #222;
     color: #000;
 }
 
 .s2-exclude-btn {
     background-color: #F24236;
+    color: #fff;
 }
 
 /* 스텝 3 */

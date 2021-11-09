@@ -17,6 +17,10 @@ button:disabled {
   opacity: 0.3;
 }
 
+html, body {
+  overflow: hidden;
+}
+
 /* Remove default margin */
 body,
 h1,
