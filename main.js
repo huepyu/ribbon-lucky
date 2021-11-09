@@ -174,7 +174,6 @@ function Step2({ goNext, state, setState }) {
     React.useEffect(() => {
         const productsMembersMap = {}
         for (let id of idSetRef.current) {
-            console.log(id)
             productsMembersMap[id] = members.map(m => ({
                 ...m,
                 target: true,
