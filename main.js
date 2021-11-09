@@ -348,6 +348,8 @@ function Step3({ state, setState }) {
         setCurrentReward(step3Rewards[rewardsIdxRef.current])
     }
 
+    console.log(drawingState)
+
     return (
         <div className="step">
             <div className="step-3">
@@ -361,6 +363,8 @@ function Step3({ state, setState }) {
                     <div className="s3-members-grid">
                         {state.members.map(m => {
                             const target = drawingState.targetIds.includes(m.id)
+                            console.log(m.id)
+
                             const classes = [
                                 's3-member',
                                 's3-stack' + m.stack,

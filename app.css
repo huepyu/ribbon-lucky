@@ -113,7 +113,7 @@ body {
 .s1-left {
     width: 200px;
     height: 100%;
-    background-color: #ddd;
+    background-color: #e8e8e8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -398,7 +398,7 @@ body {
 
 .s3-member {
     border-radius: 6px;
-    background-color: rgb(32, 6, 6);
+    background-color: 555;
     color: #fff;
     display: flex;
     flex-direction: column;
