@@ -185,6 +185,8 @@ function Step2({ goNext, state, setState }) {
         }))
     }, [])
 
+    console.log(JSON.stringify(state.productsMembersMap))
+
     function setAll(e, id, include) {
         e.preventDefault()
 
@@ -215,7 +217,7 @@ function Step2({ goNext, state, setState }) {
                             <div className="s2-members">
                                 <div className="s2-member-list">
                                     {state.productsMembersMap[p.id].map(m => (
-                                        <div className="s2-member">
+                                        <div className="s2-member" key={m.id}>
                                             {m.name}
                                             <span>x</span>
                                         </div>
