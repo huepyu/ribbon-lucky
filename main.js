@@ -311,8 +311,13 @@ function Step3({ state, setState }) {
     const [highlightedId, setHighlightedId] = React.useState(null)
 
     function animateDrawing() {
-        const highlightedId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
-        setHighlightedId(highlightedId)
+        while(true) {
+            const nextHighlightedId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
+            if (nextHighlightedId !== highlightedId) {
+                setHighlightedId(nextHighlightedId)
+                break
+            } 
+        }
         drawingAnimationRef.current = requestAnimationFrame(animateDrawing)
     }
 
