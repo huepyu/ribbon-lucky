@@ -286,6 +286,8 @@ function Step3({ state, setState }) {
     const rewardsIdxRef = React.useRef(0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
 
+    console.log(currentReward, state.productsMembersMap)
+
     return (
         <div className="step">
             <div className="step-3">
