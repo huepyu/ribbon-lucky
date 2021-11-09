@@ -286,9 +286,10 @@ function Step3({ state, setState }) {
     return (
         <div className="step">
             <div className="step-3">
-                <div className="s3-products">
-                    {currentReward.product.name}
-                    {currentReward.reward}
+                <div className="s3-reward">
+                    <p className="s3-reward-product">{currentReward.product.name}</p>
+                    <p className="s3-reward-name">{currentReward.reward}</p>
+                    <button className="s3-drawing-btn">추첨</button>
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">

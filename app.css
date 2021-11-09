@@ -351,13 +351,29 @@ body {
     flex-direction: column;
 }
 
-.s3-products {
+.s3-reward {
     width: 100%;
     flex: 1;
     background-color: #f0f0f0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.s3-reward-product {
+    font-size: 14px;
+}
+
+.s3-reward-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.s3-drawing-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #1A936F;
+    color: #fff;
 }
 
 .s3-members {
