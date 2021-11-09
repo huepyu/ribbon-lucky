@@ -65,10 +65,18 @@ function App() {
     }, [state, step])
 
     React.useEffect(() => {
+        const listener = () => { 
+            document.querySelector(':root').style
+                .setProperty('--vh', window.innerHeight/100 + 'px');
+        }
+        const id = window.addEventListener('resize', listener)
+
         const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
         if (state) {
             setState(state)
         }
+        
+        return () => window.removeEventListener('resize', listener)
     }, [])
 
     function getStepText() {
