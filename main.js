@@ -266,7 +266,7 @@ function Step2({ goNext, state, setState }) {
 
 // 스텝 3: 추첨 단계
 function Step3({ state, setState }) {
-    const [currentProduct, setCurrentProduct] = ()
+    const [currentProduct, setCurrentProduct] = React.useState(null)
 
     return (
         <div className="step">
