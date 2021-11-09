@@ -237,7 +237,7 @@ const products = [
             reward.leafDance3,
         ],
         type: 'tree',
-        group: group.tree2,
+        group: group.tree3,
     },
     {
         name: "킹덤 디펜스 5단계: 나무 패배",
