@@ -293,7 +293,7 @@ function Step3({ state, setState }) {
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
     const [drawingState, setDrawingState] = React.useState({
         drawerId: null,
-        currentGroup: currentReward,
+        currentGroup: currentReward.product.group,
         targetIds: createTargetIds(),
     })
 
@@ -390,7 +390,7 @@ function Step3({ state, setState }) {
                     ...v,
                     drawerId: null,
                     currentGroup: nextReward.group,
-                    targetIds: v.currentGroup !== nextReward.group
+                    targetIds: v.currentGroup !== nextReward.product.group
                         ? []
                         : v.targetIds.filter(id => id !== v.drawerId)
                 }
