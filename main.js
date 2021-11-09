@@ -318,7 +318,7 @@ function Step3({ state, setState }) {
     function draw(e) {
         e.preventDefault()
 
-        const drawerId = drawingState.targetIds[Math.floor(Math.random() * targetIds.length)]
+        const drawerId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
         setState(v => ({
             ...v,
             members: v.members.map(m => {
