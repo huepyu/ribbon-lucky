@@ -28,6 +28,7 @@ class ErrorBoundary extends React.Component {
 function App() {
     const [step, setStep] = React.useState(1)
     const [state, setState] = React.useState(createNewState())
+    const [_, setCount] = React.useState(0)
 
     function reset(e) {
         e.preventDefault()
@@ -69,14 +70,14 @@ function App() {
             document.querySelector(':root').style
                 .setProperty('--vh', window.innerHeight/100 + 'px');
         }
-        const id = window.addEventListener('resize', listener)
+        window.addEventListener('resize', listener)
 
         const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
         if (state) {
             setState(state)
         } else {
             // vh 리렌더링을 위함
-            setState(v => v)
+            setCount(v => v + 1)
         }
         
         return () => window.removeEventListener('resize', listener)
