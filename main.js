@@ -266,6 +266,8 @@ function Step2({ goNext, state, setState }) {
 
 // 스텝 3: 추첨 단계
 function Step3({ state, setState }) {
+    const [currentProduct, setCurrentProduct] = ()
+
     return (
         <div className="step">
             <div className="step-3">

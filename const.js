@@ -99,6 +99,7 @@ const products = [
             reward.increaseWood,
             reward.increaseWood,
         ],
+        type: 'tree',
         group: group.kingdomDungeon,
     },
     {
