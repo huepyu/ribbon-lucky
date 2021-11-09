@@ -298,15 +298,13 @@ function Step3({ state, setState }) {
     })
 
     React.useEffect(() => {
-        console.log(drawingState.targetIds)
-
         if (!drawingState.targetIds.length) {
             setDrawingState(v => ({
                 ...v,
                 targetIds: createTargetIds(),
             }))
         }
-    }, [drawingState.targetIds])
+    }, [state, drawingState.targetIds])
 
     const lockOnDrawingRef = React.useRef(false)
     const drawingAnimationRef = React.useRef(null)
