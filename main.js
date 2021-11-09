@@ -174,6 +174,7 @@ function Step2({ goNext, state, setState }) {
     React.useEffect(() => {
         const productsMembersMap = {}
         for (let id of idSetRef.current) {
+            console.log(id)
             productsMembersMap[id] = members.map(m => ({
                 ...m,
                 target: true,
@@ -211,7 +212,7 @@ function Step2({ goNext, state, setState }) {
                                 <p key={idx} className="s2-product-reward">{r}</p>
                             ))}
                         </div>
-                        {!dups[idx] && (
+                        {!dups[idx] && state.productsMembersMap[p.id] && (
                             <div className="s2-members">
                                 <div className="s2-member-list">
                                     {state.productsMembersMap[p.id].map(m => (
