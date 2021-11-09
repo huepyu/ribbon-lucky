@@ -66,6 +66,7 @@ body {
 .root-content {
     width: 100%;
     height: calc(100% - 100px);
+    flex: 1;
     background-color: #fff;
     overflow: hidden;
 }
