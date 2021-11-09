@@ -74,6 +74,9 @@ function App() {
         const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
         if (state) {
             setState(state)
+        } else {
+            // vh 리렌더링을 위함
+            setState(v => v)
         }
         
         return () => window.removeEventListener('resize', listener)
