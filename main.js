@@ -134,18 +134,32 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
+    const idSet = React.useRef(new Set())
     const [dups, setDups] = React.useState(() => {
-        const idSet = new Set()
         const list = state.products.map(p => {
             const id = p.id
-            if (idSet.has(id)) {
+            if (idSet.current.has(id)) {
                 return true
             }
-            idSet.add(id)
+            idSet.current.add(id)
             return false
         })
         return list
     })
+
+    React.useEffect(() => {
+        const productsMembersMap = {}
+        for (let id of idSet.current) {
+            productsMembersMap[id] = members.map(m => ({
+                ...m,
+                target: true,
+            }))
+        }
+        setState(v => ({
+            ...v,
+            productsMembersMap,
+        }))
+    }, [state])
 
     return (
         <div className="step">
@@ -159,11 +173,24 @@ function Step2({ goNext, state, setState }) {
                             ))}
                         </div>
                         {!dups[idx] && (
-                            <>
-                                <div className="s2-target-btns">
-                                    전체 포함
+                            <div className="s2-members">
+                                <div className="s2-member-list">
+                                    {productsMembersMap[p.id].map(m => (
+                                        <div className="s2-member">
+                                            {m.name}
+                                            <span>x</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            </>
+                                <div className="s2-target-btns">
+                                    <div className="s2-target-btn s2-include-btn">
+                                        전체 포함
+                                    </div>
+                                    <div className="s2-target-btn s2-exclude-btn">
+                                        전체 제외
+                                    </div>
+                                </div>
+                            </div>
                         )}
                     </div>
                 )}
