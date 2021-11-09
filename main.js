@@ -274,9 +274,7 @@ function Step2({ goNext, state, setState }) {
 }
 
 // 스텝 3: 추첨 단계
-function Step3({ state, setState }) {
-    console.log(state)
-    
+function Step3({ state, setState }) {    
     const step3Rewards = React.useMemo(() => {
         const rewards = []
         state.products.forEach(product => {
@@ -371,12 +369,10 @@ function Step3({ state, setState }) {
         e.preventDefault()
         rewardsIdxRef.current += 1
         setDrawingState(v => {
-            console.log(v, v.targetIds.length, v.targetIds.filter(v => v !== v.drawerId).length)
-
             return {
                 ...v,
                 drawerId: null,
-                targetIds: v.targetIds.filter(v => v !== v.drawerId)
+                targetIds: v.targetIds.filter(id => id !== v.drawerId)
             }
         })
         
