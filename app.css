@@ -278,6 +278,7 @@ body {
 }
 
 .s2-total-members {
+    width: 60px;
     height: 40px;
     font-size: 12px;
     color: #000;
@@ -304,6 +305,10 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 12px;
+}
+
+.s2-target-btn:first-child {
+    margin-right: 10px;
 }
 
 .s2-member-btn {

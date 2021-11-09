@@ -245,11 +245,13 @@ function Step2({ goNext, state, setState }) {
                                     <div className="s2-total-members">
                                         총 <span className="s2-current-members">{state.productsMembersMap[p.id].filter(v => v.target).length}</span>/{members.length}명
                                     </div>
-                                    <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.id, true)}>
-                                        전체 포함
-                                    </div>
-                                    <div className="s2-target-btn s2-exclude-btn" onClick={e => setAll(e, p.id, false)}>
-                                        전체 제외
+                                    <div>
+                                        <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.id, true)}>
+                                            전체 포함
+                                        </div>
+                                        <div className="s2-target-btn s2-exclude-btn" onClick={e => setAll(e, p.id, false)}>
+                                            전체 제외
+                                        </div>
                                     </div>
                                 </div>
                             </div>
