@@ -265,8 +265,8 @@ function Step2({ goNext, state, setState }) {
 }
 
 // 스텝 3: 추첨 단계
-function Step3() {
-
+function Step3({ state, setState }) {
+    
 }
 
 ReactDOM.render(
