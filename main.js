@@ -291,13 +291,22 @@ function Step3({ state, setState }) {
         return rewards
     })
 
+    const drawingFinished = step3Rewards.length === state.drawers.length
     const rewardDivRef = React.useRef(null)
-    const rewardsIdxRef = React.useRef(state.drawers.length ?? 0)
+    const rewardsIdxRef = React.useRef(
+        drawingFinished
+        ? (state.drawers.length - 1)
+        : (state.drawers.length ?? 0)
+    )
     const [currentReward, setCurrentReward] = React.useState(
-        step3Rewards[rewardsIdxRef.current]
-        ?? step3Rewards[rewardsIdxRef.current - 1])
+        step3Rewards[
+            drawingFinished
+            ? rewardsIdxRef.current - 1
+            : rewardsIdxRef.current   
+        ]
+    )
     const [drawingState, setDrawingState] = React.useState({
-        drawerId: null,
+        drawerId: drawingFinished ? state.drawers[state.drawers.length - 1] : null,
         currentGroup: currentReward.product.group,
         targetIds: createTargetIds(),
     })
@@ -314,7 +323,7 @@ function Step3({ state, setState }) {
     const lockOnDrawingRef = React.useRef(false)
     const drawingAnimationRef = React.useRef(null)
     const [highlightedId, setHighlightedId] = React.useState(null)
-    const [finished, setFinished] = React.useState(false)
+    const [finished, setFinished] = React.useState(drawingFinished)
 
     function animateDrawing() {
         while(true) {
