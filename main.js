@@ -371,7 +371,7 @@ function Step3({ state, setState }) {
         e.preventDefault()
         rewardsIdxRef.current += 1
         setDrawingState(v => {
-            console.log(v)
+            console.log(v, v.targetIds.length, v.targetIds.filter(v => v !== v.drawerId).length)
 
             return {
                 ...v,
