@@ -322,11 +322,12 @@ function Step3({ state, setState }) {
     }
 
     function createTargetIds() {
-        const targetMembers = state.productsMembersMap[currentReward.product.group].filter(m => m.target)
+        const targetMembers = state.productsMembersMap[currentReward.product.group]
+            .filter(m => m.target)
+            .map(m => m.id)
+            .map(id => state.members[id])
         const minStack = Math.min(...targetMembers.map(v => v.stack))
     
-        console.log(minStack, targetMembers.map(v => v.stack))
-
         return targetMembers
             .filter(v => v.stack === minStack)
             .map(v => v.id)
