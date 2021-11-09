@@ -65,7 +65,7 @@ body {
 /* 컨텐츠 */
 .root-content {
     width: 100%;
-    height: calc(100 * var(--vh) - 100px);
+    height: calc(100vh - 100px);
     background-color: #fff;
     overflow: hidden;
 }
