@@ -248,7 +248,8 @@ body {
     flex-direction: column;
     margin: 10px 0;
     border-radius: 20px;
-    background-color: #eee;
+    background-color: #222;
+    color: #fff;
     overflow: hidden;
 }
 
@@ -326,7 +327,7 @@ body {
 }
 
 .s2-include-btn {
-    background-color: #222;
+    background-color: #36c;
     color: #fff;
 }
 
