@@ -16,7 +16,9 @@ class ErrorBoundary extends React.Component {
   
     render() {
       if (this.state.hasError) {
-        return <h1>Something went wrong.</h1>
+        return <div className="error-wrapper">
+            <h1>아 단밤님 때문에 뭐가 잘못됐어요!</h1>
+        </div>
       }
   
       return this.props.children
@@ -40,6 +42,7 @@ function App() {
             productsMembersMap: {},
             members: members.map(m => ({
                 ...m,
+                stack: 0,
                 rewards: [],
             })),
             drawers: [],
