@@ -448,8 +448,8 @@ body {
 }
 
 .s3-highlighted {
-    background-color: #E7F0FF !important;
-    color: #333 !important;
+    background-color: #666 !important;
+    color: #fff !important;
 }
 
 .s3-member-name {

@@ -338,6 +338,8 @@ function Step3({ state, setState }) {
         animateDrawing()
         setTimeout(() => {
             cancelAnimationFrame(drawingAnimationRef.current)
+            
+            setHighlightedId(null)
             setState(v => ({
                 ...v,
                 members: v.members.map(m => {
@@ -362,7 +364,7 @@ function Step3({ state, setState }) {
             }))
     
             lockOnDrawingRef.current = false
-        }, 2000)
+        }, 1000)
     }
 
     function next(e) {
@@ -371,12 +373,10 @@ function Step3({ state, setState }) {
         setDrawingState(v => ({
             ...v,
             drawerId: null,
-            targetIds: v.targetIds.filter(v => v !== drawerId)
+            targetIds: v.targetIds.filter(v => v !== v.drawerId)
         }))
         setCurrentReward(step3Rewards[rewardsIdxRef.current])
     }
-
-    console.log(drawingState)
 
     return (
         <div className="step">
