@@ -277,6 +277,7 @@ body {
 .s2-target-btn {
     height: 40px;
     border-radius: 10px;
+    padding: 0 14px;
     background-color: #222;
     color: #fff;
     display: flex;
@@ -287,6 +288,7 @@ body {
 
 .s2-include-btn {
     background-color: #55D6C2;
+    color: #000;
 }
 
 .s2-exclude-btn {
