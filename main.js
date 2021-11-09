@@ -38,7 +38,10 @@ function App() {
         return {
             products: [],
             productsMembersMap: {},
-            members: [...members]
+            members: members.map(m => ({
+                ...m,
+                rewards: [],
+            })),
         }
     }
 
@@ -95,7 +98,7 @@ function App() {
 function Step1({ goNext, state, setState }) {
     const leftRef = React.useRef(null)
 
-    const step1Products = React.useMemo(() => products, [])
+    const step1Products = React.useMemo(() => [...products], [])
 
     function addProduct(e, product) {
         e.preventDefault()
@@ -293,13 +296,25 @@ function Step3({ state, setState }) {
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">
-                        {state.members.map(m => (
-                            <div className={`s3-member s3-stack${m.id % 3}`} key={m.id}>
-                                <p className="s3-member-name">{m.name}</p>
-                                <p className="s3-member-reward">{m.rewards[0] ?? ''}</p>
-                                <p className="s3-member-reward">{m.rewards[1] ?? ''}</p>
-                            </div>
-                        ))}
+                        {state.members.map(m => {
+                            const target = state.productsMembersMap[currentReward.product.group].includes(m.id)
+                            const classes = [
+                                's3-member',
+                                's3-stack' + m.id % 3,
+                            ]
+
+                            if (!target) {
+                                classes.push('s3-not-target')
+                            }
+
+                            return (
+                                <div className={classes.join(' ')} key={m.id}>
+                                    <p className="s3-member-name">{m.name}</p>
+                                    <p className="s3-member-reward">{m.rewards[0] ?? ''}</p>
+                                    <p className="s3-member-reward">{m.rewards[1] ?? ''}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

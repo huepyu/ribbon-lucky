@@ -356,6 +356,7 @@ body {
     flex: 1;
     background-color: #f0f0f0;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
@@ -372,6 +373,7 @@ body {
 .s3-drawing-btn {
     width: 60px;
     height: 60px;
+    border-radius: 30px;
     background-color: #1A936F;
     color: #fff;
 }
@@ -406,7 +408,11 @@ body {
 }
 
 .s3-stack2 {
-    background-color: #231942 !important;
+    background-color: #5E548E !important;
+}
+
+.s3-not-target {
+    opacity: 0.5;
 }
 
 .s3-member-name {
