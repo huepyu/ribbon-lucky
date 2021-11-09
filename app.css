@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background-color: #222;
+    background-color: #eee;
     padding: 20px;
 }
 
@@ -27,12 +27,12 @@ body {
 
 .title-text {
     font-size: 36px;
-    color: #fff;
+    color: #000;
 }
 
 .title-step {
     font-size: 12px;
-    color: #fff;
+    color: #222;
 }
 
 .title-btn {
@@ -367,7 +367,7 @@ body {
 }
 
 .s3-reward-name {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
 }
 
@@ -415,7 +415,7 @@ body {
 }
 
 .s3-not-target {
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 .s3-member-name {

@@ -80,7 +80,7 @@ function App() {
             <div className="root-title">
                 <button className="title-btn back-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
                 <div className="title-wrapper">
-                    <p className="title-text">리본 행운상점 추첨</p>
+                    <p className="title-text">Ribbon 행운상점 추첨</p>
                     <p className="title-step">{getStepText()}</p>
                 </div>
                 <button className="title-btn reset-btn" onClick={reset}>초기화</button>
@@ -176,6 +176,10 @@ function Step2({ goNext, state, setState }) {
     })
 
     React.useEffect(() => {
+        if (Object.keys(state.productsMembersMap).length) {
+            return
+        }
+
         const productsMembersMap = {}
         for (let group of groupSetRef.current) {
             productsMembersMap[group] = members.map(m => ({
@@ -192,8 +196,6 @@ function Step2({ goNext, state, setState }) {
     function setAll(e, group, include) {
         e.preventDefault()
 
-        console.log(group, include)
-
         setState(v => ({
             ...v,
             productsMembersMap: {
@@ -208,8 +210,6 @@ function Step2({ goNext, state, setState }) {
 
     function toggleTarget(e, group, mid) {
         e.preventDefault()
-
-        console.log(group, mid)
 
         setState(v => ({
             ...v,
