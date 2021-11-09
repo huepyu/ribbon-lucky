@@ -327,14 +327,11 @@ function Step3({ state, setState }) {
     }
 
     function createTargetIds() {
-        console.log(state)
-
         const targetMembers = state.productsMembersMap[currentReward.product.group]
             .filter(m => m.target)
             .map(m => m.id)
-            .map(id => state.members[id])
+            .map(id => state.members.find(m => m.id === id))
 
-        console.log(targetMembers)
         const minStack = Math.min(...targetMembers.map(v => v.stack))
     
         return targetMembers
@@ -403,8 +400,6 @@ function Step3({ state, setState }) {
 
             setCurrentReward(nextReward)
             setDrawingState(v => {
-                console.log(nextReward.group, v.currentGroup, nextReward.product.group)
-
                 return {
                     ...v,
                     drawerId: null,
