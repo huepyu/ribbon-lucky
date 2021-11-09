@@ -398,7 +398,7 @@ body {
 
 .s3-member {
     border-radius: 6px;
-    background-color: #333;
+    background-color: #555;
     color: #fff;
     display: flex;
     flex-direction: column;
