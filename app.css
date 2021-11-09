@@ -369,6 +369,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.s3-disappear {
+    transform: translateY(100px);
+    opacity: 0;
 }
 
 .s3-reward-product {
@@ -444,7 +453,7 @@ body {
 }
 
 .s3-not-target {
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 .s3-highlighted {

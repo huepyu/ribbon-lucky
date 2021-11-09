@@ -288,6 +288,7 @@ function Step3({ state, setState }) {
         return rewards
     })
 
+    const rewardDivRef = React.useRef(null)
     const rewardsIdxRef = React.useRef(0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
     const [drawingState, setDrawingState] = React.useState({
@@ -375,8 +376,13 @@ function Step3({ state, setState }) {
                 targetIds: v.targetIds.filter(id => id !== v.drawerId)
             }
         })
-        
-        setCurrentReward(step3Rewards[rewardsIdxRef.current])
+
+        setTimeout(() => {
+            setCurrentReward(step3Rewards[rewardsIdxRef.current])
+            setTimeout(() => {
+                rewardDivRef.current.classList.remove('s3-disappear')
+            }, 50)
+        }, 500)
     }
 
     return (
@@ -384,7 +390,7 @@ function Step3({ state, setState }) {
             <div className="step-3">
                 <div className="s3-reward-wrapper">
                     <div className="s3-reward-dummy" />
-                    <div className="s3-reward">
+                    <div className="s3-reward" ref={rewardDivRef}>
                         <p className="s3-reward-product">{currentReward.product.name}</p>
                         <p className="s3-reward-name">{currentReward.reward}</p>
                         {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
