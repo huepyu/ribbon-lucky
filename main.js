@@ -306,7 +306,7 @@ function Step3({ state, setState }) {
         ]
     )
     const [drawingState, setDrawingState] = React.useState({
-        drawerId: drawingFinished ? state.drawers[state.drawers.length - 1] : null,
+        drawerId: drawingFinished ? state.drawers[state.drawers.length - 1].id : null,
         currentGroup: currentReward.product.group,
         targetIds: createTargetIds(),
     })
@@ -387,7 +387,7 @@ function Step3({ state, setState }) {
             }),
             drawers: [
                 ...v.drawers,
-                { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
+                { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId) }
             ]
         }))
 
