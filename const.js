@@ -354,7 +354,6 @@ const products = [
 
 const members = [
     { name: '단밤' },
-    { name: '리치푸른' },
     { name: '슈슈베리' },
     { name: '당신어머' },
     { name: '둘째이모' },
@@ -386,10 +385,12 @@ const members = [
     { name: 'Callous' },
     { name: '쥬s' },
     { name: '망고띠' },
+    { name: '리치푸른' },
     { name: '기계광' },
     { name: '크로스리' },
 ].map((m, idx) => ({
     ...m,
     id: idx + 1,
+    stack: 0,
     rewards: [],
 }))

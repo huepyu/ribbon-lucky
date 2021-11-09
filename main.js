@@ -290,21 +290,72 @@ function Step3({ state, setState }) {
     const rewardsIdxRef = React.useRef(0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
 
+    const nonDrewMembersRef = React.useRef(createMemberIds())
+
+    const [drawingState, setDrawingState] = React.useState({
+        drawerId: null,
+        targetIds: createTargetIds(),
+    })
+
+    React.useEffect(() => {
+        if (!drawingState.targetIds.length) {
+            setDrawingState(v => ({
+                ...v,
+                targetIds: createTargetIds(),
+            }))
+        }
+    }, [drawingState.targetIds])
+
+    function createTargetIds() {
+        const targets = state.productsMembersMap[currentReward.product.group]
+        const minStack = Math.min(...targets.map(v => v.stack))
+
+        return targets
+            .filter(v => v.stack === minStack)
+            .map(v => v.id)
+    }
+
+    function draw(e) {
+        e.preventDefault()
+
+        const drawerId = drawingState.targetIds[Math.floor(Math.random() * targetIds.length)]
+        setState(v => ({
+            ...v,
+            members: v.members.map(m => {
+                if (m.id === drawerId) {
+                    return {
+                        ...m,
+                        stack: m.stack + 1,
+                        rewards: [...m.rewards, currentReward.reward]
+                    }
+                }
+                return { ...m }
+            })
+        }))
+
+        setDrawingState(v => ({
+            ...v,
+            drawerId,
+            targetIds: v.targetIds.filter(v => v !== drawerId)
+        }))
+    }
+
     return (
         <div className="step">
             <div className="step-3">
                 <div className="s3-reward">
                     <p className="s3-reward-product">{currentReward.product.name}</p>
                     <p className="s3-reward-name">{currentReward.reward}</p>
-                    <button className="s3-drawing-btn">추첨</button>
+                    {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
+                    {!drawingState.drawerId && <button className="s3-drawing-btn" onClick={draw}>추첨</button>}
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">
                         {state.members.map(m => {
-                            const { target } = state.productsMembersMap[currentReward.product.group].find(pmm => pmm.id === m.id)
+                            const target = targetIds.includes(m.id)
                             const classes = [
                                 's3-member',
-                                's3-stack' + m.id % 3,
+                                's3-stack' + m.stack,
                             ]
 
                             if (!target) {
