@@ -25,19 +25,20 @@ class ErrorBoundary extends React.Component {
 
 function App() {
     const [step, setStep] = React.useState(1)
-    const [state, setState] = React.useState({
-        products: [],
-        productsMembersMap: {},
-    })
+    const [state, setState] = React.useState(createNewState())
 
     function reset(e) {
         e.preventDefault()
         sessionStorage.clear()
-        setState({
+        setState(createNewState())
+        setStep(1)
+    }
+    
+    function createNewState() {
+        return {
             products: [],
             productsMembersMap: {},
-        })
-        setStep(1)
+        }
     }
 
     function goBack(e) {
@@ -157,27 +158,22 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    console.log(JSON.stringify(state))
-
-    const idSet = React.useRef(new Set())
+    const idSetRef = React.useRef(new Set())
     const [dups, setDups] = React.useState(() => {
         const list = state.products.map(p => {
             const id = p.id
-            if (idSet.current.has(id)) {
+            if (idSetRef.current.has(id)) {
                 return true
             }
-            idSet.current.add(id)
+            idSetRef.current.add(id)
             return false
         })
         return list
     })
 
-    console.log(JSON.stringify(idSet))
-    console.log(dups)
-
     React.useEffect(() => {
         const productsMembersMap = {}
-        for (let id of idSet.current) {
+        for (let id of idSetRef.current) {
             productsMembersMap[id] = members.map(m => ({
                 ...m,
                 target: true,
@@ -218,7 +214,7 @@ function Step2({ goNext, state, setState }) {
                         {!dups[idx] && (
                             <div className="s2-members">
                                 <div className="s2-member-list">
-                                    {productsMembersMap[p.id].map(m => (
+                                    {state.productsMembersMap[p.id].map(m => (
                                         <div className="s2-member">
                                             {m.name}
                                             <span>x</span>
