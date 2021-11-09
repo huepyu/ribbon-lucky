@@ -314,6 +314,7 @@ function Step3({ state, setState }) {
     const lockOnDrawingRef = React.useRef(false)
     const drawingAnimationRef = React.useRef(null)
     const [highlightedId, setHighlightedId] = React.useState(null)
+    const [finished, setFinished] = React.useState(false)
 
     function animateDrawing() {
         while(true) {
@@ -385,8 +386,13 @@ function Step3({ state, setState }) {
             ...v,
             drawerId,
         }))
-
+        
         lockOnDrawingRef.current = false
+        
+        const nextReward = step3Rewards[rewardsIdxRef.current + 1]
+        if (!nextReward) {
+            setFinished(true)
+        }
     } 
 
     function next(e) {
@@ -427,7 +433,7 @@ function Step3({ state, setState }) {
                         {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
                         {!drawingState.drawerId && <button className="s3-reward-btn s3-drawing-btn" onClick={draw}>추첨</button>}
                     </div>
-                    {drawingState.drawerId && <button className="s3-reward-btn s3-next-btn" onClick={next}>다음</button>}
+                    {drawingState.drawerId && !finished && <button className="s3-reward-btn s3-next-btn" onClick={next}>다음</button>}
                     {!drawingState.drawerId && <div className="s3-reward-dummy" />}
                 </div>
                 <div className="s3-members">
