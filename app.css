@@ -390,6 +390,7 @@ body {
 }
 
 .s3-reward-drawer {
+    margin-top: 10px;
     font-size: 48px;
     color: #1A936F
 }
@@ -410,6 +411,7 @@ body {
 
 .s3-drawing-btn {
     background-color: #1A936F;
+    margin-top: 10px;
     color: #fff;
 }
 
