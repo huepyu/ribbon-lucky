@@ -291,10 +291,14 @@ body {
     font-weight: bold;
 }
 
-.s2-target-btns {
+.s2-target-bottom {
     display: flex;
     justify-content: space-between;
     margin: 10px;
+}
+
+.s2-target-btns {
+    display: flex;
 }
 
 .s2-target-btn {
