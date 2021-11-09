@@ -183,7 +183,7 @@ function Step2({ goNext, state, setState }) {
             ...v,
             productsMembersMap,
         }))
-    }, [state.products])
+    }, [])
 
     function setAll(e, id, include) {
         e.preventDefault()
