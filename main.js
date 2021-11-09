@@ -200,6 +200,23 @@ function Step2({ goNext, state, setState }) {
         }))
     }
 
+    function toggleTarget(e, pid, mid) {
+        e.preventDefault()
+
+        setState(v => ({
+            ...v,
+            productsMembersMap: {
+                ...v.productsMembersMap,
+                [pid]: v.productsMembersMap[pid].map((m, idx) => {
+                    if (m.id === mid) {
+                        return !m.target
+                    }
+                    return m.target
+                }),
+            }
+        }))
+    }
+
     return (
         <div className="step">
             <div className="main s2-wrapper">
@@ -217,7 +234,10 @@ function Step2({ goNext, state, setState }) {
                                     {state.productsMembersMap[p.id].map(m => (
                                         <div className="s2-member" key={m.id}>
                                             {m.name}
-                                            <button className={`s2-member-btn ${m.target ? 's2-exclude-btn' : 's2-include-btn'}`}>
+                                            <button
+                                                className={`s2-member-btn ${m.target ? 's2-exclude-btn' : 's2-include-btn'}`}
+                                                onClick={e => toggleTarget(e, p.id, m.id)}
+                                            >
                                                 {m.target ? '제외하기' : '추가하기'}
                                             </button>
                                         </div>
