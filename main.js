@@ -158,14 +158,14 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    const idSetRef = React.useRef(new Set())
+    const groupSetRef = React.useRef(new Set())
     const [dups, setDups] = React.useState(() => {
         const list = state.products.map(p => {
-            const id = p.id
-            if (idSetRef.current.has(id)) {
+            const group = p.group
+            if (groupSetRef.current.has(group)) {
                 return true
             }
-            idSetRef.current.add(id)
+            groupSetRef.current.add(group)
             return false
         })
         return list
@@ -173,8 +173,8 @@ function Step2({ goNext, state, setState }) {
 
     React.useEffect(() => {
         const productsMembersMap = {}
-        for (let id of idSetRef.current) {
-            productsMembersMap[id] = members.map(m => ({
+        for (let group of groupSetRef.current) {
+            productsMembersMap[group] = members.map(m => ({
                 ...m,
                 target: true,
             }))
@@ -185,14 +185,14 @@ function Step2({ goNext, state, setState }) {
         }))
     }, [])
 
-    function setAll(e, id, include) {
+    function setAll(e, group, include) {
         e.preventDefault()
 
         setState(v => ({
             ...v,
             productsMembersMap: {
                 ...v.productsMembersMap,
-                [id]: v.productsMembersMap[id].map(m => ({
+                [group]: v.productsMembersMap[group].map(m => ({
                     ...m,
                     target: include,
                 })),
@@ -200,14 +200,14 @@ function Step2({ goNext, state, setState }) {
         }))
     }
 
-    function toggleTarget(e, pid, mid) {
+    function toggleTarget(e, group, mid) {
         e.preventDefault()
 
         setState(v => ({
             ...v,
             productsMembersMap: {
                 ...v.productsMembersMap,
-                [pid]: v.productsMembersMap[pid].map((m, idx) => ({
+                [group]: v.productsMembersMap[group].map((m, idx) => ({
                     ...m,
                     target: m.id === mid ? !m.target : m.target
                 })),
@@ -273,7 +273,7 @@ function Step3({ state, setState }) {
 
                 </div>
                 <div className="s3-members">
-                    
+
                 </div>
             </div>
         </div>
