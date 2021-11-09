@@ -293,8 +293,9 @@ function Step3({ state, setState }) {
                     <div className="s3-members-grid">
                         {members.map(m => (
                             <div className="s3-member">
-                                {m.name}
-                                당첨
+                                <p className="s3-member-name">{m.name}</p>
+                                <p className="s3-member-reward">인크리스워터</p>
+                                <p className="s3-member-reward">인크리스라이트</p>
                             </div>
                         ))}
                     </div>
