@@ -306,6 +306,16 @@ function Step3({ state, setState }) {
         }
     }, [drawingState.targetIds])
 
+    const lockOnDrawingRef = React.useRef(false)
+    const drawingAnimationRef = React.useRef(null)
+    const [highlightedId, setHighlightedId] = React.useState(null)
+
+    function animateDrawing() {
+        const highlightedId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
+        setHighlightedId(highlightedId)
+        drawingAnimationRef.current = requestAnimationFrame(animateDrawing)
+    }
+
     function createTargetIds() {
         const targets = state.productsMembersMap[currentReward.product.group].filter(m => m.target)
         const minStack = Math.min(...targets.map(v => v.stack))
@@ -318,29 +328,41 @@ function Step3({ state, setState }) {
     function draw(e) {
         e.preventDefault()
 
-        const drawerId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
-        setState(v => ({
-            ...v,
-            members: v.members.map(m => {
-                if (m.id === drawerId) {
-                    return {
-                        ...m,
-                        stack: m.stack + 1,
-                        rewards: [...m.rewards, currentReward.reward]
-                    }
-                }
-                return { ...m }
-            }),
-            drawers: [
-                ...v.drawers,
-                { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
-            ]
-        }))
+        if (lockOnDrawingRef.current) {
+            return
+        }
+        lockOnDrawingRef.current = true
 
-        setDrawingState(v => ({
-            ...v,
-            drawerId,
-        }))
+        const drawerId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
+
+        animateDrawing()
+        setTimeout(() => {
+            cancelAnimationFrame(drawingAnimationRef.current)
+            setState(v => ({
+                ...v,
+                members: v.members.map(m => {
+                    if (m.id === drawerId) {
+                        return {
+                            ...m,
+                            stack: m.stack + 1,
+                            rewards: [...m.rewards, currentReward.reward]
+                        }
+                    }
+                    return { ...m }
+                }),
+                drawers: [
+                    ...v.drawers,
+                    { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
+                ]
+            }))
+    
+            setDrawingState(v => ({
+                ...v,
+                drawerId,
+            }))
+    
+            lockOnDrawingRef.current = false
+        }, 2000)
     }
 
     function next(e) {
@@ -379,6 +401,10 @@ function Step3({ state, setState }) {
                                 's3-member',
                                 's3-stack' + m.stack,
                             ]
+
+                            if (highlightedId === m.id) {
+                                classes.push('s3-highlighted')
+                            }
 
                             if (!target) {
                                 classes.push('s3-not-target')

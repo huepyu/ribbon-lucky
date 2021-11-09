@@ -447,6 +447,11 @@ body {
     opacity: 0.2;
 }
 
+.s3-highlighted {
+    background-color: #E7F0FF !important;
+    color: #333 !important;
+}
+
 .s3-member-name {
     font-size: 18px;
 }
