@@ -436,10 +436,8 @@ function Step3({ state, setState }) {
                         <p className="s3-reward-name">{currentReward.reward}</p>
                         {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
                         {!drawingState.drawerId && <button className="s3-reward-btn s3-drawing-btn" onClick={draw}>추첨</button>}
-                        <p>
-                            {!finished && <p className="s3-reward-info">상품 추천 진행 중({rewardsIdxRef.current}/{step3Rewards.length})</p>}
-                            {finished && <p className="s3-reward-info s3-finish">상품 추첨 완료! 고생하셨습니다!</p>}
-                        </p>
+                        {!finished && <p className="s3-reward-info">상품 추천 진행 중({rewardsIdxRef.current}/{step3Rewards.length})</p>}
+                        {finished && <p className="s3-reward-info s3-finish">상품 추첨 완료! 고생하셨습니다!</p>}
                     </div>
                     {drawingState.drawerId && !finished && <button className="s3-reward-btn s3-next-btn" onClick={next}>다음</button>}
                     {drawingState.drawerId && finished && <button className="s3-reward-btn s3-finish-btn" onClick={print}>출력</button>}
