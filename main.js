@@ -1,5 +1,28 @@
 const STORAGE_KEY = 'STORAGE_KEY'
 
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { hasError: false };
+    }
+  
+    static getDerivedStateFromError(error) {
+      return { hasError: true }
+    }
+  
+    componentDidCatch(error, errorInfo) {
+      console.error(error, errorInfo)
+    }
+  
+    render() {
+      if (this.state.hasError) {
+        return <h1>Something went wrong.</h1>
+      }
+  
+      return this.props.children
+    }
+  }
+
 function App() {
     const [step, setStep] = React.useState(1)
     const [state, setState] = React.useState({
@@ -48,7 +71,7 @@ function App() {
     }
 
     return (
-        <>
+        <ErrorBoundary>
             <div className="root-title">
                 <button className="title-btn back-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
                 <div className="title-wrapper">
@@ -62,14 +85,12 @@ function App() {
                 {step === 2 && <Step2 goNext={goNext} state={state} setState={setState} />}
                 {step === 3 && <Step3 state={state} setState={setState} />}
             </div>
-        </>
+        </ErrorBoundary>
     )
 }
 
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext, state, setState }) {
-    console.log('hi')
-
     const leftRef = React.useRef(null)
 
     const step1Products = React.useMemo(() => products, [])
@@ -136,7 +157,7 @@ function Step1({ goNext, state, setState }) {
 
 // 스텝 2: 인원 선별 단계
 function Step2({ goNext, state, setState }) {
-    console.log(state)
+    console.log(JSON.stringify(state))
 
     const idSet = React.useRef(new Set())
     const [dups, setDups] = React.useState(() => {
@@ -151,7 +172,7 @@ function Step2({ goNext, state, setState }) {
         return list
     })
 
-    console.log(idSet)
+    console.log(JSON.stringify(idSet))
     console.log(dups)
 
     React.useEffect(() => {
