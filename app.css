@@ -336,5 +336,22 @@ body {
 
 /* 스텝 3 */
 .step-3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.s3-products {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.s3-members {
+    width: 100%;
+    flex: 1;
+    background-color: #222;
 }
