@@ -42,6 +42,7 @@ function App() {
                 ...m,
                 rewards: [],
             })),
+            drawers: [],
         }
     }
 
@@ -327,7 +328,11 @@ function Step3({ state, setState }) {
                     }
                 }
                 return { ...m }
-            })
+            }),
+            drawers: [
+                ...v.drawers,
+                { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
+            ]
         }))
 
         setDrawingState(v => ({
@@ -335,6 +340,12 @@ function Step3({ state, setState }) {
             drawerId,
             targetIds: v.targetIds.filter(v => v !== drawerId)
         }))
+    }
+
+    function next(e) {
+        e.preventDefault()
+        rewardsIdxRef.current += 1
+        setCurrentReward(step3Rewards[rewardsIdxRef.current])
     }
 
     return (
@@ -349,7 +360,7 @@ function Step3({ state, setState }) {
                 <div className="s3-members">
                     <div className="s3-members-grid">
                         {state.members.map(m => {
-                            const target = targetIds.includes(m.id)
+                            const target = drawingState.targetIds.includes(m.id)
                             const classes = [
                                 's3-member',
                                 's3-stack' + m.stack,
