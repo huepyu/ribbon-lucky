@@ -248,14 +248,14 @@ body {
     flex-direction: column;
     margin: 10px 0;
     border-radius: 20px;
-    background-color: #fff;
+    background-color: #eee;
     overflow: hidden;
 }
 
 .s2-member-list {
     width: 100%;
     overflow-y: scroll;
-    border: 1px solid #bbb;
+    background-color: #fff;
     border-radius: 20px;
     flex: 1;
     display: flex;
