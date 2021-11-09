@@ -325,6 +325,8 @@ function Step3({ state, setState }) {
     }
 
     function createTargetIds() {
+        console.log(state.productsMembersMap)
+
         const targetMembers = state.productsMembersMap[currentReward.product.group]
             .filter(m => m.target)
             .map(m => m.id)
