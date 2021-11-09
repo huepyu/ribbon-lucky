@@ -370,11 +370,16 @@ function Step3({ state, setState }) {
     function next(e) {
         e.preventDefault()
         rewardsIdxRef.current += 1
-        setDrawingState(v => ({
-            ...v,
-            drawerId: null,
-            targetIds: v.targetIds.filter(v => v !== v.drawerId)
-        }))
+        setDrawingState(v => {
+            console.log(v)
+
+            return {
+                ...v,
+                drawerId: null,
+                targetIds: v.targetIds.filter(v => v !== v.drawerId)
+            }
+        })
+        
         setCurrentReward(step3Rewards[rewardsIdxRef.current])
     }
 
