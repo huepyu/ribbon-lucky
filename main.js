@@ -68,6 +68,8 @@ function App() {
 
 // 스텝 1: 상품 등록 단계
 function Step1({ goNext, state, setState }) {
+    console.log('hi')
+
     const leftRef = React.useRef(null)
 
     const step1Products = React.useMemo(() => products, [])
