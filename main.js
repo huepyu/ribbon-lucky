@@ -278,6 +278,8 @@ function Step2({ goNext, state, setState }) {
 
 // 스텝 3: 추첨 단계
 function Step3({ state, setState }) {    
+    console.log(state)
+
     const step3Rewards = React.useMemo(() => {
         const rewards = []
         state.products.forEach(product => {
