@@ -309,7 +309,7 @@ function Step3({ state, setState }) {
                 targetIds: createTargetIds(),
             }))
         }
-    }, [state, drawingState.targetIds])
+    }, [state, currentReward, drawingState.targetIds])
 
     const lockOnDrawingRef = React.useRef(false)
     const drawingAnimationRef = React.useRef(null)
@@ -327,7 +327,7 @@ function Step3({ state, setState }) {
     }
 
     function createTargetIds() {
-        console.log(state.productsMembersMap)
+        console.log(state)
 
         const targetMembers = state.productsMembersMap[currentReward.product.group]
             .filter(m => m.target)
