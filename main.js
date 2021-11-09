@@ -355,11 +355,15 @@ function Step3({ state, setState }) {
     return (
         <div className="step">
             <div className="step-3">
-                <div className="s3-reward">
-                    <p className="s3-reward-product">{currentReward.product.name}</p>
-                    <p className="s3-reward-name">{currentReward.reward}</p>
-                    {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
-                    {!drawingState.drawerId && <button className="s3-drawing-btn" onClick={draw}>추첨</button>}
+                <div className="s3-reward-wrapper">
+                    <div className="s3-reward-dummy" />
+                    <div className="s3-reward">
+                        <p className="s3-reward-product">{currentReward.product.name}</p>
+                        <p className="s3-reward-name">{currentReward.reward}</p>
+                        {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
+                        {!drawingState.drawerId && <button className="s3-reward-btn s3-drawing-btn" onClick={draw}>추첨</button>}
+                    </div>
+                    {drawingState.drawerId && <button className="s3-reward-btn s3-next-btn" onClick={draw}>다음</button>}
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">

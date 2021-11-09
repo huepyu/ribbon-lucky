@@ -352,6 +352,14 @@ body {
     flex-direction: column;
 }
 
+.s3-reward-wrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .s3-reward {
     width: 100%;
     flex: 1;
@@ -371,7 +379,17 @@ body {
     font-weight: bold;
 }
 
-.s3-drawing-btn {
+.s3-reward-drawer {
+    font-size: 48px;
+    color: #1A936F
+}
+
+.s3-reward-dummy {
+    width: 60px;
+    height: 60px;
+}
+
+.s3-reward-btn {
     width: 60px;
     height: 60px;
     margin-top: 10px;
@@ -379,6 +397,16 @@ body {
     background-color: #1A936F;
     color: #fff;
     cursor: pointer;
+}
+
+.s3-drawing-btn {
+    background-color: #1A936F;
+    color: #fff;
+}
+
+.s3-next-btn {
+    background-color: #5E548E;
+    color: #fff;
 }
 
 .s3-members {
