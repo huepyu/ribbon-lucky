@@ -324,10 +324,12 @@ function Step3({ state, setState }) {
     }
 
     function createTargetIds() {
-        const targets = state.productsMembersMap[currentReward.product.group].filter(m => m.target)
-        const minStack = Math.min(...targets.map(v => v.stack))
+        const targetMembers = state.productsMembersMap[currentReward.product.group].filter(m => m.target)
+        const minStack = Math.min(...targetMembers.map(v => v.stack))
+    
+        console.log(minStack, targetMembers.map(v => v.stack))
 
-        return targets
+        return targetMembers
             .filter(v => v.stack === minStack)
             .map(v => v.id)
     }
@@ -406,7 +408,7 @@ function Step3({ state, setState }) {
             setTimeout(() => {
                 rewardDivRef.current.classList.remove('s3-disappear')
             }, 50)
-        }, 500)
+        }, 250)
     }
 
     return (

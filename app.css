@@ -362,7 +362,7 @@ body {
     padding: 0 30px;
     transform: translateY(0);
     opacity: 1;
-    -webkit-transition: opacity 0.25s, -webkit-transform 0.25s;
+    -webkit-transition: opacity 0.24s, -webkit-transform 0.25s;
     transition: opacity 0.25s, transform 0.25s;
 }
 
