@@ -279,8 +279,8 @@ function Step3({ state, setState }) {
         return rewards
     })
 
-    const rewardsIdx = React.useRef(0)
-    const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdx.current])
+    const rewardsIdxRef = React.useRef(0)
+    const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
 
     return (
         <div className="step">
