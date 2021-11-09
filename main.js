@@ -38,6 +38,7 @@ function App() {
         return {
             products: [],
             productsMembersMap: {},
+            members: [...members]
         }
     }
 
@@ -243,7 +244,7 @@ function Step2({ goNext, state, setState }) {
                                 </div>
                                 <div className="s2-target-bottom">
                                     <div className="s2-total-members">
-                                        총&nbsp;<span className="s2-current-members">{state.productsMembersMap[p.group].filter(v => v.target).length}</span>/{members.length}명
+                                        총&nbsp;<span className="s2-current-members">{state.productsMembersMap[p.group].filter(v => v.target).length}</span>/{state.members.length}명
                                     </div>
                                     <div className="s2-target-btns">
                                         <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.group, true)}>
@@ -291,11 +292,11 @@ function Step3({ state, setState }) {
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">
-                        {members.map(m => (
-                            <div className="s3-member">
+                        {state.members.map(m => (
+                            <div className="s3-member" key={m.id}>
                                 <p className="s3-member-name">{m.name}</p>
-                                <p className="s3-member-reward">인크리스워터</p>
-                                <p className="s3-member-reward">인크리스라이트</p>
+                                <p className="s3-member-reward">{m.rewards[0] ?? ''}</p>
+                                <p className="s3-member-reward">{m.rewards[1] ?? ''}</p>
                             </div>
                         ))}
                     </div>

@@ -388,4 +388,8 @@ const members = [
     { name: '망고띠' },
     { name: '기계광' },
     { name: '크로스리' },
-].map((m, idx) => ({ ...m, id: idx + 1 }))
+].map((m, idx) => ({
+    ...m,
+    id: idx + 1,
+    rewards: [],
+}))
