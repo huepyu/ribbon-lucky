@@ -298,6 +298,8 @@ function Step3({ state, setState }) {
     })
 
     React.useEffect(() => {
+        console.log(drawingState.targetIds)
+
         if (!drawingState.targetIds.length) {
             setDrawingState(v => ({
                 ...v,
@@ -410,9 +412,9 @@ function Step3({ state, setState }) {
     return (
         <div className="step">
             <div className="step-3">
-                <div className="s3-reward-wrapper">
+                <div className="s3-reward-wrapper" ref={rewardDivRef}>
                     <div className="s3-reward-dummy" />
-                    <div className="s3-reward" ref={rewardDivRef}>
+                    <div className="s3-reward">
                         <p className="s3-reward-product">{currentReward.product.name}</p>
                         <p className="s3-reward-name">{currentReward.reward}</p>
                         {drawingState.drawerId && <p className="s3-reward-drawer">{members.find(m => m.id === drawingState.drawerId).name}</p>}
