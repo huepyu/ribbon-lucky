@@ -192,6 +192,8 @@ function Step2({ goNext, state, setState }) {
     function setAll(e, group, include) {
         e.preventDefault()
 
+        console.log(group, include)
+
         setState(v => ({
             ...v,
             productsMembersMap: {
@@ -206,6 +208,8 @@ function Step2({ goNext, state, setState }) {
 
     function toggleTarget(e, group, mid) {
         e.preventDefault()
+
+        console.log(group, mid)
 
         setState(v => ({
             ...v,
@@ -286,8 +290,6 @@ function Step3({ state, setState }) {
     const rewardsIdxRef = React.useRef(0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
 
-    console.log(currentReward, state.productsMembersMap)
-
     return (
         <div className="step">
             <div className="step-3">
@@ -299,7 +301,7 @@ function Step3({ state, setState }) {
                 <div className="s3-members">
                     <div className="s3-members-grid">
                         {state.members.map(m => {
-                            const target = state.productsMembersMap[currentReward.product.group].includes(m.id)
+                            const { target } = state.productsMembersMap[currentReward.product.group].find(pmm => pmm.id === m.id)
                             const classes = [
                                 's3-member',
                                 's3-stack' + m.id % 3,
