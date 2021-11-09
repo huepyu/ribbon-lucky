@@ -219,22 +219,22 @@ function Step2({ goNext, state, setState }) {
         <div className="step">
             <div className="main s2-wrapper">
                 {state.products.map((p, idx) =>
-                    <div key={idx} className={`s2-product ${p.type} ${dups[idx] && 's2-dup'}`}>
+                    <div key={idx} className={`s2-product ${p.type}${dups[idx] ? ' s2-dup' : ''}`}>
                         <div className="s2-product-title">{p.name}</div>
                         <div className="s2-product-rewards">
                             {p.rewards.map((r, idx) => (
                                 <p key={idx} className="s2-product-reward">{r}</p>
                             ))}
                         </div>
-                        {!dups[idx] && state.productsMembersMap[p.id] && (
+                        {!dups[idx] && state.productsMembersMap[p.group] && (
                             <div className="s2-members">
                                 <div className="s2-member-list">
-                                    {state.productsMembersMap[p.id].map(m => (
-                                        <div className="s2-member" key={m.id}>
+                                    {state.productsMembersMap[p.group].map((m, idx) => (
+                                        <div className="s2-member" key={idx}>
                                             {m.name}
                                             <button
                                                 className={`s2-member-btn ${m.target ? 's2-exclude-btn' : 's2-include-btn'}`}
-                                                onClick={e => toggleTarget(e, p.id, m.id)}
+                                                onClick={e => toggleTarget(e, p.group, m.id)}
                                             >
                                                 {m.target ? '제외하기' : '추가하기'}
                                             </button>
@@ -243,13 +243,13 @@ function Step2({ goNext, state, setState }) {
                                 </div>
                                 <div className="s2-target-bottom">
                                     <div className="s2-total-members">
-                                        총 <span className="s2-current-members">{state.productsMembersMap[p.id].filter(v => v.target).length}</span>/{members.length}명
+                                        총 <span className="s2-current-members">{state.productsMembersMap[p.group].filter(v => v.target).length}</span>/{members.length}명
                                     </div>
                                     <div className="s2-target-btns">
-                                        <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.id, true)}>
+                                        <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.group, true)}>
                                             전체 포함
                                         </div>
-                                        <div className="s2-target-btn s2-exclude-btn" onClick={e => setAll(e, p.id, false)}>
+                                        <div className="s2-target-btn s2-exclude-btn" onClick={e => setAll(e, p.group, false)}>
                                             전체 제외
                                         </div>
                                     </div>
