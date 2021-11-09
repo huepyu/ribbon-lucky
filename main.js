@@ -293,6 +293,7 @@ function Step3({ state, setState }) {
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
     const [drawingState, setDrawingState] = React.useState({
         drawerId: null,
+        currentGroup: currentReward,
         targetIds: createTargetIds(),
     })
 
@@ -368,18 +369,25 @@ function Step3({ state, setState }) {
 
     function next(e) {
         e.preventDefault()
-        rewardsIdxRef.current += 1
-        setDrawingState(v => {
-            return {
-                ...v,
-                drawerId: null,
-                targetIds: v.targetIds.filter(id => id !== v.drawerId)
-            }
-        })
-
+        
         rewardDivRef.current.classList.add('s3-disappear')
+
         setTimeout(() => {
-            setCurrentReward(step3Rewards[rewardsIdxRef.current])
+            rewardsIdxRef.current += 1
+            const nextReward = step3Rewards[rewardsIdxRef.current]
+
+            setCurrentReward(nextReward)
+            setDrawingState(v => {
+                return {
+                    ...v,
+                    drawerId: null,
+                    currentGroup: nextReward.group,
+                    targetIds: v.currentGroup !== nextReward.group
+                        ? []
+                        : v.targetIds.filter(id => id !== v.drawerId)
+                }
+            })
+
             setTimeout(() => {
                 rewardDivRef.current.classList.remove('s3-disappear')
             }, 50)
