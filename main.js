@@ -364,6 +364,7 @@ function Step3({ state, setState }) {
                         {!drawingState.drawerId && <button className="s3-reward-btn s3-drawing-btn" onClick={draw}>추첨</button>}
                     </div>
                     {drawingState.drawerId && <button className="s3-reward-btn s3-next-btn" onClick={draw}>다음</button>}
+                    {!drawingState.drawerId && <div className="s3-reward-dummy" />}
                 </div>
                 <div className="s3-members">
                     <div className="s3-members-grid">
