@@ -388,7 +388,12 @@ const members = [
     { name: '리치푸른' },
     { name: '기계광' },
     { name: '크로스리' },
-].sort().map((m, idx) => ({
+].sort((a, b) => {
+    if (a.name < b.name) {
+        return -1;
+    }
+    return 1;
+}).map((m, idx) => ({
     ...m,
     id: idx + 1,
     stack: 0,
