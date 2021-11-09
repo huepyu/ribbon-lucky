@@ -207,12 +207,10 @@ function Step2({ goNext, state, setState }) {
             ...v,
             productsMembersMap: {
                 ...v.productsMembersMap,
-                [pid]: v.productsMembersMap[pid].map((m, idx) => {
-                    if (m.id === mid) {
-                        return !m.target
-                    }
-                    return m.target
-                }),
+                [pid]: v.productsMembersMap[pid].map((m, idx) => ({
+                    ...m,
+                    target: m.id === mid ? !m.target : m.target
+                })),
             }
         }))
     }
