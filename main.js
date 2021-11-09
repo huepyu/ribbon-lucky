@@ -329,10 +329,10 @@ function Step3({ state, setState }) {
             .filter(m => m.target)
             .map(m => m.id)
             .map(id => state.members[id])
+
+        console.log(targetMembers)
         const minStack = Math.min(...targetMembers.map(v => v.stack))
     
-        console.log(console.log(target), minStack)
-
         return targetMembers
             .filter(v => v.stack === minStack)
             .map(v => v.id)
