@@ -184,7 +184,7 @@ function Step2({ goNext, state, setState }) {
             ...v,
             productsMembersMap,
         }))
-    }, [state])
+    }, [state.products])
 
     function setAll(e, id, include) {
         e.preventDefault()
