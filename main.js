@@ -243,7 +243,7 @@ function Step2({ goNext, state, setState }) {
                                 </div>
                                 <div className="s2-target-bottom">
                                     <div className="s2-total-members">
-                                        총 <span className="s2-current-members">{state.productsMembersMap[p.group].filter(v => v.target).length}</span>/{members.length}명
+                                        총&nbsp;<span className="s2-current-members">{state.productsMembersMap[p.group].filter(v => v.target).length}</span>/{members.length}명
                                     </div>
                                     <div className="s2-target-btns">
                                         <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.group, true)}>
@@ -270,7 +270,7 @@ function Step3({ state, setState }) {
         const rewards = []
         state.products.forEach(product => {
             product.rewards.forEach(reward => {
-                step3Rewards.push({
+                rewards.push({
                     reward,
                     product,
                 })
