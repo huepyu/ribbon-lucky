@@ -293,7 +293,7 @@ function Step3({ state, setState }) {
                 <div className="s3-members">
                     <div className="s3-members-grid">
                         {state.members.map(m => (
-                            <div className="s3-member" key={m.id}>
+                            <div className={`s3-member s3-stack${m.id % 3}`} key={m.id}>
                                 <p className="s3-member-name">{m.name}</p>
                                 <p className="s3-member-reward">{m.rewards[0] ?? ''}</p>
                                 <p className="s3-member-reward">{m.rewards[1] ?? ''}</p>

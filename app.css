@@ -385,6 +385,14 @@ body {
     align-items: center;
 }
 
+.s3-stack1 {
+    background-color: #1A936F !important;
+}
+
+.s3-stack2 {
+    background-color: #231942 !important;
+}
+
 .s3-member-name {
     font-size: 18px;
 }
