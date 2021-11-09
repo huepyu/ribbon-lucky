@@ -231,7 +231,7 @@ function Step2({ goNext, state, setState }) {
                                 <div className="s2-member-list">
                                     {state.productsMembersMap[p.group].map((m, idx) => (
                                         <div className="s2-member" key={idx}>
-                                            {m.name}
+                                            <span className={m.target ? 's2-included' : 's2-excluded'}>{m.name}</span>
                                             <button
                                                 className={`s2-member-btn ${m.target ? 's2-exclude-btn' : 's2-include-btn'}`}
                                                 onClick={e => toggleTarget(e, p.group, m.id)}
@@ -290,7 +290,14 @@ function Step3({ state, setState }) {
                     {currentReward.reward}
                 </div>
                 <div className="s3-members">
-
+                    <div className="s3-members-grid">
+                        {members.map(m => (
+                            <div className="s3-member">
+                                {m.name}
+                                당첨
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
