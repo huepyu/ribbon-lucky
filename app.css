@@ -363,7 +363,7 @@ body {
 .s3-reward {
     width: 100%;
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
