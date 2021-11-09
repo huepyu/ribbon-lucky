@@ -161,6 +161,21 @@ function Step2({ goNext, state, setState }) {
         }))
     }, [state])
 
+    function setAll(e, id, include) {
+        e.preventDefault()
+
+        setState(v => ({
+            ...v,
+            productsMembersMap: {
+                ...v.productsMembersMap,
+                [id]: v.productsMembersMap[id].map(m => ({
+                    ...m,
+                    target: include,
+                })),
+            }
+        }))
+    }
+
     return (
         <div className="step">
             <div className="main s2-wrapper">
@@ -183,10 +198,10 @@ function Step2({ goNext, state, setState }) {
                                     ))}
                                 </div>
                                 <div className="s2-target-btns">
-                                    <div className="s2-target-btn s2-include-btn">
+                                    <div className="s2-target-btn s2-include-btn" onClick={e => setAll(e, p.id, true)}>
                                         전체 포함
                                     </div>
-                                    <div className="s2-target-btn s2-exclude-btn">
+                                    <div className="s2-target-btn s2-exclude-btn" onClick={e => setAll(e, p.id, false)}>
                                         전체 제외
                                     </div>
                                 </div>
