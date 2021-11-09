@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background-color: #e6e6e6;
+    background-color: #eee;
     padding: 20px;
 }
 
@@ -358,6 +358,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 30px;
 }
 
 .s3-reward {
