@@ -278,8 +278,6 @@ function Step2({ goNext, state, setState }) {
 
 // 스텝 3: 추첨 단계
 function Step3({ state, setState }) {    
-    console.log(state)
-
     const step3Rewards = React.useMemo(() => {
         const rewards = []
         state.products.forEach(product => {
@@ -294,7 +292,7 @@ function Step3({ state, setState }) {
     })
 
     const rewardDivRef = React.useRef(null)
-    const rewardsIdxRef = React.useRef(0)
+    const rewardsIdxRef = React.useRef(state.drawer.length ?? 0)
     const [currentReward, setCurrentReward] = React.useState(step3Rewards[rewardsIdxRef.current])
     const [drawingState, setDrawingState] = React.useState({
         drawerId: null,
