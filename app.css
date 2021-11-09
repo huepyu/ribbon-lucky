@@ -364,19 +364,18 @@ body {
 .s3-reward {
     width: 100%;
     flex: 1;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateY(0);
     opacity: 1;
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: opacity 0.5s, transform 0.5s;
+    -webkit-transition: opacity 0.25s, -webkit-transform 0.25s;
+    transition: opacity 0.25s, transform 0.25s;
 }
 
 .s3-disappear {
-    transform: translateY(100px);
+    transform: translateY(50px);
     opacity: 0;
 }
 
@@ -395,13 +394,13 @@ body {
 }
 
 .s3-reward-dummy {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
 }
 
 .s3-reward-btn {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     margin-top: 10px;
     border-radius: 30px;
     background-color: #1A936F;

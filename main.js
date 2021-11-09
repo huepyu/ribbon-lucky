@@ -335,37 +335,45 @@ function Step3({ state, setState }) {
 
         const drawerId = drawingState.targetIds[Math.floor(Math.random() * drawingState.targetIds.length)]
 
+        if (drawingState.targetIds.length < 2) {
+            updateDrawing(drawerId)
+            return
+        }
+
         animateDrawing()
         setTimeout(() => {
             cancelAnimationFrame(drawingAnimationRef.current)
-            
-            setHighlightedId(null)
-            setState(v => ({
-                ...v,
-                members: v.members.map(m => {
-                    if (m.id === drawerId) {
-                        return {
-                            ...m,
-                            stack: m.stack + 1,
-                            rewards: [...m.rewards, currentReward.reward]
-                        }
-                    }
-                    return { ...m }
-                }),
-                drawers: [
-                    ...v.drawers,
-                    { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
-                ]
-            }))
-    
-            setDrawingState(v => ({
-                ...v,
-                drawerId,
-            }))
-    
-            lockOnDrawingRef.current = false
+            updateDrawing(drawerId)
         }, 1000)
     }
+
+    function updateDrawing(drawerId) {
+        setHighlightedId(null)
+        setState(v => ({
+            ...v,
+            members: v.members.map(m => {
+                if (m.id === drawerId) {
+                    return {
+                        ...m,
+                        stack: m.stack + 1,
+                        rewards: [...m.rewards, currentReward.reward]
+                    }
+                }
+                return { ...m }
+            }),
+            drawers: [
+                ...v.drawers,
+                { name: currentReward.reward, drawer: state.members.find(m => m.id === drawerId).name }
+            ]
+        }))
+
+        setDrawingState(v => ({
+            ...v,
+            drawerId,
+        }))
+
+        lockOnDrawingRef.current = false
+    } 
 
     function next(e) {
         e.preventDefault()
