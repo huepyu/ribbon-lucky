@@ -490,7 +490,7 @@ function Step4 ({ state }) {
     return (
         <div className="s4-wrapper">
             {state.drawers.map(d => (
-                <p className="s4-drawer">{d.reward} - {d.member.name}</p>
+                <p className="s4-drawer">{d.name} - {d.member.name}</p>
             ))}
         </div>
     )
