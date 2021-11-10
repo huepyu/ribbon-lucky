@@ -58,7 +58,7 @@ function App() {
 
     const goNext = React.useCallback((e) => {
         e.preventDefault()
-        if (step !== 3) {
+        if (step !== 4) {
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state))
             setStep(v => v + 1)
         }
@@ -76,6 +76,7 @@ function App() {
             case 1: return '상품 선택 단계'
             case 2: return '추첨 대상 선별 단계'
             case 3: return '추첨 단계'
+            case 4: return '추첨 결과'
         }
     }
 
@@ -92,7 +93,8 @@ function App() {
             <div className="root-content">
                 {step === 1 && <Step1 goNext={goNext} state={state} setState={setState} />}
                 {step === 2 && <Step2 goNext={goNext} state={state} setState={setState} />}
-                {step === 3 && <Step3 state={state} setState={setState} />}
+                {step === 3 && <Step3 goNext={goNext} state={state} setState={setState} />}
+                {step === 4 && <Step4 state={state} setState={setState} />}
             </div>
         </ErrorBoundary>
     )
@@ -277,7 +279,7 @@ function Step2({ goNext, state, setState }) {
 }
 
 // 스텝 3: 추첨 단계
-function Step3({ state, setState }) {    
+function Step3({ goNext, state, setState }) {    
     console.log(state)
 
     const step3Rewards = React.useMemo(() => {
@@ -433,10 +435,6 @@ function Step3({ state, setState }) {
         }, 250)
     }
 
-    function print() {
-
-    }
-
     return (
         <div className="step">
             <div className="step-3">
@@ -451,7 +449,7 @@ function Step3({ state, setState }) {
                         {finished && <p className="s3-reward-info s3-finish">상품 추첨 완료! 고생하셨습니다!</p>}
                     </div>
                     {drawingState.drawerId && !finished && <button className="s3-reward-btn s3-next-btn" onClick={next}>다음</button>}
-                    {drawingState.drawerId && finished && <button className="s3-reward-btn s3-finish-btn" onClick={print}>출력</button>}
+                    {drawingState.drawerId && finished && <button className="s3-reward-btn s3-finish-btn" onClick={goNext}>출력</button>}
                     {!drawingState.drawerId && <div className="s3-reward-dummy" />}
                 </div>
                 <div className="s3-members">
@@ -483,6 +481,17 @@ function Step3({ state, setState }) {
                     </div>
                 </div>
             </div>
+        </div>
+    )
+}
+
+// 스텝 4: 추첨 결과
+function Step4 ({ state }) {
+    return (
+        <div className="s4-wrapper">
+            {state.drawers.map(d => (
+                <p className="s4-drawer">{d.reward} - {d.member.name}</p>
+            ))}
         </div>
     )
 }
