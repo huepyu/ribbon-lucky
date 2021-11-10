@@ -489,8 +489,8 @@ function Step3({ goNext, state, setState }) {
 function Step4 ({ state }) {
     return (
         <div className="s4-wrapper">
-            {state.drawers.map(d => (
-                <p className="s4-drawer">{d.name} - {d.member.name}</p>
+            {state.drawers.map((d, idx) => (
+                <p className="s4-drawer" key={idx}>{d.name} - {d.member.name}</p>
             ))}
         </div>
     )

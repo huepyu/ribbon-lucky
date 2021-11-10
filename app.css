@@ -465,6 +465,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
 }
 
 .s3-stack1 {
@@ -495,12 +497,12 @@ body {
 /* 스텝 4 */
 .s4-wrapper {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0 100px;
+    padding: 50px 0 200px;
     overflow-y: scroll;
 }
 
