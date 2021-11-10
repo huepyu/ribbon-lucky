@@ -86,7 +86,7 @@ function App() {
                 <button className="title-btn back-btn" disabled={step === 1} onClick={goBack}>뒤로</button>
                 <div className="title-wrapper">
                     <p className="title-text">Ribbon 행운상점 추첨</p>
-                    <p className="title-step">{getStepText()}</p>
+                    <p className="title-step" onClick={goNext}>{getStepText()}</p>
                 </div>
                 <button className="title-btn reset-btn" onClick={reset}>초기화</button>
             </div>
