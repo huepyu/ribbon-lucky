@@ -38,6 +38,7 @@ const productType = {
 
 const group = {
     dingo: 'dingo',
+    blackDye: 'blackDye',
     kingdomDungeon: 'kingdomDungeon',
     kingdomDefence: 'kingdomDefence',
     light1: 'light1',
@@ -59,15 +60,22 @@ const group = {
 
 const products = [
     {
-        name: "유물 전장 승리",
+        name: "유물 전장 승리: 딩고",
         rewards: [
             reward.dingo,
             reward.dingo,
+        ],
+        type: 'normal',
+        group: group.dingo,
+    },
+    {
+        name: "유물 전장 승리: 블랙 염색약",
+        rewards: [
             reward.blackDye,
             reward.blackDye,
         ],
         type: 'normal',
-        group: group.dingo,
+        group: group.blackDye,
     },
     {
         name: "유물 전장 패배",
@@ -387,7 +395,6 @@ const members = [
     { name: '망고띠' },
     { name: '리치푸른' },
     { name: '기계광' },
-    { name: '크로스리' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
