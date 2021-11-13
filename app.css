@@ -329,13 +329,13 @@ body {
 }
 
 .s2-target-btn:first-child {
-    margin-right: 10px;
+    margin-right: 4px;
 }
 
 .s2-member-btn {
     height: 30px;
     border-radius: 10px;
-    padding: 0 6px;
+    padding: 0 4px;
     display: flex;
     justify-content: center;
     align-items: center;
