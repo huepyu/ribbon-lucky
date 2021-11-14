@@ -39,7 +39,8 @@ const productType = {
 const group = {
     dingo: 'dingo',
     blackDye: 'blackDye',
-    kingdomDungeon: 'kingdomDungeon',
+    kingdomDungeonTree: 'kingdomDungeonTree',
+    kingdomDungeonFire: 'kingdomDungeonFire',
     kingdomDefence: 'kingdomDefence',
     light1: 'light1',
     light2: 'light2',
@@ -91,7 +92,7 @@ const products = [
             reward.commonGemBox,
         ],
         type: 'tree',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonTree,
     },
     {
         name: "엔트 석상 4단계",
@@ -99,7 +100,7 @@ const products = [
             reward.increaseWood,
         ],
         type: 'tree',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonTree,
     },
     {
         name: "엔트 석상 5단계",
@@ -108,7 +109,7 @@ const products = [
             reward.increaseWood,
         ],
         type: 'tree',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonTree,
     },
     {
         name: "화염의 기사 라스 1단계",
@@ -116,7 +117,7 @@ const products = [
             reward.commonGemBox,
         ],
         type: 'fire',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonFire,
     },
     {
         name: "화염의 기사 라스 4단계",
@@ -124,7 +125,7 @@ const products = [
             reward.increaseFire,
         ],
         type: 'fire',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonFire,
     },
     {
         name: "화염의 기사 라스 5단계",
@@ -133,7 +134,7 @@ const products = [
             reward.increaseFire,
         ],
         type: 'fire',
-        group: group.kingdomDungeon,
+        group: group.kingdomDungeonFire,
     },
     {
         name: "킹덤 디펜스 5단계: 빛 승리 스킬북 II",
