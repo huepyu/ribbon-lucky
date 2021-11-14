@@ -391,11 +391,11 @@ const members = [
     { name: '르미르르미' },
     { name: '야옹개' },
     { name: '잠자고싶쿨' },
-    { name: 'Callous' },
     { name: '쥬s' },
     { name: '망고띠' },
     { name: '리치푸른' },
     { name: '기계광' },
+    { name: '리망' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
