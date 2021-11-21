@@ -86,14 +86,14 @@ const products = [
         type: 'normal',
         group: group.dingo,
     },
-    {
-        name: "엔트 석상 1단계",
-        rewards: [
-            reward.commonGemBox,
-        ],
-        type: 'tree',
-        group: group.kingdomDungeonTree,
-    },
+    // {
+    //     name: "엔트 석상 1단계",
+    //     rewards: [
+    //         reward.commonGemBox,
+    //     ],
+    //     type: 'tree',
+    //     group: group.kingdomDungeonTree,
+    // },
     {
         name: "엔트 석상 4단계",
         rewards: [
@@ -111,14 +111,14 @@ const products = [
         type: 'tree',
         group: group.kingdomDungeonTree,
     },
-    {
-        name: "화염의 기사 라스 1단계",
-        rewards: [
-            reward.commonGemBox,
-        ],
-        type: 'fire',
-        group: group.kingdomDungeonFire,
-    },
+    // {
+    //     name: "화염의 기사 라스 1단계",
+    //     rewards: [
+    //         reward.commonGemBox,
+    //     ],
+    //     type: 'fire',
+    //     group: group.kingdomDungeonFire,
+    // },
     {
         name: "화염의 기사 라스 4단계",
         rewards: [
@@ -256,109 +256,109 @@ const products = [
         type: 'tree',
         group: group.tree1,
     },
-    {
-        name: "킹덤 디펜스 5단계: 승리",
-        rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-        ],
-        type: 'normal',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 빛 승리 스킬북",
-        rewards: [
-            reward.lightningOrb1,
-        ],
-        type: 'light',
-        group: group.light1,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 빛 패배",
-        rewards: [
-            reward.lightPage1,
-        ],
-        type: 'light',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 어둠 승리 스킬북",
-        rewards: [
-            reward.darkBalloon1,
-        ],
-        type: 'dark',
-        group: group.dark1,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 어둠 패배",
-        rewards: [
-            reward.darkPage1,
-        ],
-        type: 'dark',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 불 승리 스킬북",
-        rewards: [
-            reward.fireCracker1,
-        ],
-        type: 'fire',
-        group: group.fire1,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 불 패배",
-        rewards: [
-            reward.firePage1,
-        ],
-        type: 'fire',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 물 승리 스킬북",
-        rewards: [
-            reward.waterBomb1,
-        ],
-        type: 'water',
-        group: group.water1,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 물 패배",
-        rewards: [
-            reward.waterPage1,
-        ],
-        type: 'water',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
-        rewards: [
-            reward.leafDance1,
-        ],
-        type: 'tree',
-        group: group.tree1,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 나무 패배",
-        rewards: [
-            reward.lightPage1,
-        ],
-        type: 'tree',
-        group: group.kingdomDefence,
-    },
-    {
-        name: "킹덤 디펜스 4단계: 승리",
-        rewards: [
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-            reward.kingdomPresent,
-        ],
-        type: 'common',
-        group: group.kingdomDefence,
-    }
+    // {
+    //     name: "킹덤 디펜스 5단계: 승리",
+    //     rewards: [
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //     ],
+    //     type: 'normal',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 빛 승리 스킬북",
+    //     rewards: [
+    //         reward.lightningOrb1,
+    //     ],
+    //     type: 'light',
+    //     group: group.light1,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 빛 패배",
+    //     rewards: [
+    //         reward.lightPage1,
+    //     ],
+    //     type: 'light',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 어둠 승리 스킬북",
+    //     rewards: [
+    //         reward.darkBalloon1,
+    //     ],
+    //     type: 'dark',
+    //     group: group.dark1,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 어둠 패배",
+    //     rewards: [
+    //         reward.darkPage1,
+    //     ],
+    //     type: 'dark',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 불 승리 스킬북",
+    //     rewards: [
+    //         reward.fireCracker1,
+    //     ],
+    //     type: 'fire',
+    //     group: group.fire1,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 불 패배",
+    //     rewards: [
+    //         reward.firePage1,
+    //     ],
+    //     type: 'fire',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 물 승리 스킬북",
+    //     rewards: [
+    //         reward.waterBomb1,
+    //     ],
+    //     type: 'water',
+    //     group: group.water1,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 물 패배",
+    //     rewards: [
+    //         reward.waterPage1,
+    //     ],
+    //     type: 'water',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
+    //     rewards: [
+    //         reward.leafDance1,
+    //     ],
+    //     type: 'tree',
+    //     group: group.tree1,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 나무 패배",
+    //     rewards: [
+    //         reward.lightPage1,
+    //     ],
+    //     type: 'tree',
+    //     group: group.kingdomDefence,
+    // },
+    // {
+    //     name: "킹덤 디펜스 4단계: 승리",
+    //     rewards: [
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //         reward.kingdomPresent,
+    //     ],
+    //     type: 'common',
+    //     group: group.kingdomDefence,
+    // }
 ].map((p, idx) => ({ ...p, id: idx + 1 }))
 
 const members = [
