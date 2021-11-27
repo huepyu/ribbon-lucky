@@ -375,7 +375,6 @@ const members = [
     { name: '팔색조' },
     { name: '기린아' },
     { name: '퓨엘' },
-    { name: '귓밥' },
     { name: '주녕코' },
     { name: '로로리다' },
     { name: 'ESNA' },
@@ -396,6 +395,7 @@ const members = [
     { name: '리치푸른' },
     { name: '기계광' },
     { name: '리망' },
+    { name: '싱싱브로콜리' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
