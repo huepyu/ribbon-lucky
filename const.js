@@ -12,7 +12,7 @@ const reward = {
     darkBalloon2: '다크 벌룬 II',
     darkBalloon3: '다크 벌룬 III',
     fireCracker1:'파이어크래커 I', 
-    fireCracker2:'파이어크래커 I', 
+    fireCracker2:'파이어크래커 II', 
     fireCracker3:'파이어크래커 III', 
     waterBomb1: '워터 밤 I',
     waterBomb2: '워터 밤 II',
@@ -393,7 +393,6 @@ const members = [
     { name: '쥬s' },
     { name: '망고띠' },
     { name: '리치푸른' },
-    { name: '기계광' },
     { name: '리망' },
     { name: '싱싱브로콜리' },
 ].sort((a, b) => {
