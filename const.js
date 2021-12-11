@@ -395,6 +395,7 @@ const members = [
     { name: '리치푸른' },
     { name: '리망' },
     { name: '싱싱브로콜리' },
+    { name: 'pook' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
