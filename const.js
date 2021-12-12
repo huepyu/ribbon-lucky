@@ -364,8 +364,8 @@ const products = [
 const members = [
     { name: '단밤' },
     { name: '슈슈베리' },
-    { name: '당신어머' },
-    { name: '둘째이모' },
+    { name: '어머' },
+    { name: '워니니' },
     { name: '휴퓨' },
     { name: '츄퓨' },
     { name: '클린' },
