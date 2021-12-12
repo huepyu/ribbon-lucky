@@ -332,22 +332,22 @@ const products = [
     //     type: 'water',
     //     group: group.kingdomDefence,
     // },
-    // {
-    //     name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
-    //     rewards: [
-    //         reward.leafDance1,
-    //     ],
-    //     type: 'tree',
-    //     group: group.tree1,
-    // },
-    // {
-    //     name: "킹덤 디펜스 4단계: 나무 패배",
-    //     rewards: [
-    //         reward.lightPage1,
-    //     ],
-    //     type: 'tree',
-    //     group: group.kingdomDefence,
-    // },
+    {
+        name: "킹덤 디펜스 4단계: 나무 승리 스킬북",
+        rewards: [
+            reward.leafDance1,
+        ],
+        type: 'tree',
+        group: group.tree1,
+    },
+    {
+        name: "킹덤 디펜스 4단계: 나무 패배",
+        rewards: [
+            reward.lightPage1,
+        ],
+        type: 'tree',
+        group: group.kingdomDefence,
+    },
     // {
     //     name: "킹덤 디펜스 4단계: 승리",
     //     rewards: [
