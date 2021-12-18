@@ -363,7 +363,6 @@ const products = [
 
 const members = [
     { name: '단밤' },
-    { name: '슈슈베리' },
     { name: '어머' },
     { name: '워니니' },
     { name: '휴퓨' },
@@ -372,7 +371,7 @@ const members = [
     { name: '유한량' },
     { name: 'HyunA' },
     { name: '꼬마짱구' },
-    { name: '팔색조' },
+    { name: '쒸밤' },
     { name: '기린아' },
     { name: '퓨엘' },
     { name: '주녕코' },
@@ -396,6 +395,11 @@ const members = [
     { name: '리망' },
     { name: '싱싱브로콜리' },
     { name: 'pook' },
+    { name: '살르안' },
+    { name: '김쨩아' },
+    { name: '플럼' },
+    { name: '능구렁이' },
+    { name: '구름빛블루베리' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
