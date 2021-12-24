@@ -392,7 +392,6 @@ const members = [
     { name: '망고띠' },
     { name: '리치푸른' },
     { name: '리망' },
-    { name: '싱싱브로콜리' },
     { name: 'pook' },
     { name: '김쨩아' },
     { name: '플럼' },
