@@ -382,7 +382,6 @@ const members = [
     { name: '르봄' },
     { name: '퓨리' },
     { name: '도밍고' },
-    { name: '노카무라' },
     { name: '촙촙이' },
     { name: '촙촙2' },
     { name: '르미르르미' },
