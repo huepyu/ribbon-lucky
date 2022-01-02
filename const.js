@@ -25,6 +25,8 @@ const reward = {
     firePage1: '불의 마법 페이지 I',
     waterPage1: '물의 마법 페이지 I',
     treePage1: '나무의 마법 페이지 I',
+    throneSkillBook: '왕성 스킬북 상자',
+    darkMagicCrystal: '흑마법 결정 100개'
 }
 
 const productType = {
@@ -57,6 +59,7 @@ const group = {
     tree1: 'tree1',
     tree2: 'tree2',
     tree3: 'tree3',
+    throne: 'throne'
 }
 
 const products = [
@@ -66,7 +69,7 @@ const products = [
             reward.dingo,
             reward.dingo,
         ],
-        type: 'normal',
+        type: productType.normal,
         group: group.dingo,
     },
     {
@@ -75,7 +78,7 @@ const products = [
             reward.blackDye,
             reward.blackDye,
         ],
-        type: 'normal',
+        type: productType.normal,
         group: group.blackDye,
     },
     {
@@ -83,7 +86,7 @@ const products = [
         rewards: [
             reward.dingo,
         ],
-        type: 'normal',
+        type: productType.normal,
         group: group.dingo,
     },
     // {
@@ -91,7 +94,7 @@ const products = [
     //     rewards: [
     //         reward.commonGemBox,
     //     ],
-    //     type: 'tree',
+    //     type: productType.tree,
     //     group: group.kingdomDungeonTree,
     // },
     {
@@ -99,7 +102,7 @@ const products = [
         rewards: [
             reward.increaseWood,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.kingdomDungeonTree,
     },
     {
@@ -108,7 +111,7 @@ const products = [
             reward.increaseWood,
             reward.increaseWood,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.kingdomDungeonTree,
     },
     // {
@@ -116,7 +119,7 @@ const products = [
     //     rewards: [
     //         reward.commonGemBox,
     //     ],
-    //     type: 'fire',
+    //     type: productType.fire,
     //     group: group.kingdomDungeonFire,
     // },
     {
@@ -124,7 +127,7 @@ const products = [
         rewards: [
             reward.increaseFire,
         ],
-        type: 'fire',
+        type: productType.fire,
         group: group.kingdomDungeonFire,
     },
     {
@@ -133,7 +136,7 @@ const products = [
             reward.increaseFire,
             reward.increaseFire,
         ],
-        type: 'fire',
+        type: productType.fire,
         group: group.kingdomDungeonFire,
     },
     {
@@ -141,7 +144,7 @@ const products = [
         rewards: [
             reward.lightningOrb2,
         ],
-        type: 'light',
+        type: productType.light,
         group: group.light2,
     },
     {
@@ -149,7 +152,7 @@ const products = [
         rewards: [
             reward.lightningOrb3,
         ],
-        type: 'light',
+        type: productType.light,
         group: group.light3,
     },
     {
@@ -157,7 +160,7 @@ const products = [
         rewards: [
             reward.lightningOrb1,
         ],
-        type: 'light',
+        type: productType.light,
         group: group.light1,
     },
     {
@@ -165,7 +168,7 @@ const products = [
         rewards: [
             reward.darkBalloon2,
         ],
-        type: 'dark',
+        type: productType.dark,
         group: group.dark2,
     },
     {
@@ -173,7 +176,7 @@ const products = [
         rewards: [
             reward.darkBalloon3,
         ],
-        type: 'dark',
+        type: productType.dark,
         group: group.dark3,
     },
     {
@@ -181,7 +184,7 @@ const products = [
         rewards: [
             reward.darkBalloon1,
         ],
-        type: 'dark',
+        type: productType.dark,
         group: group.dark1,
     },
     {
@@ -189,7 +192,7 @@ const products = [
         rewards: [
             reward.fireCracker2,
         ],
-        type: 'fire',
+        type: productType.fire,
         group: group.fire2,
     },
     {
@@ -197,7 +200,7 @@ const products = [
         rewards: [
             reward.fireCracker3,
         ],
-        type: 'fire',
+        type: productType.fire,
         group: group.fire3,
     },
     {
@@ -205,7 +208,7 @@ const products = [
         rewards: [
             reward.fireCracker1,
         ],
-        type: 'fire',
+        type: productType.fire,
         group: group.fire1,
     },
     {
@@ -213,7 +216,7 @@ const products = [
         rewards: [
             reward.waterBomb2,
         ],
-        type: 'water',
+        type: productType.water,
         group: group.water2,
     },
     {
@@ -221,7 +224,7 @@ const products = [
         rewards: [
             reward.waterBomb3,
         ],
-        type: 'water',
+        type: productType.water,
         group: group.water3,
     },
     {
@@ -229,7 +232,7 @@ const products = [
         rewards: [
             reward.waterBomb1,
         ],
-        type: 'water',
+        type: productType.water,
         group: group.water1,
     },
     {
@@ -237,7 +240,7 @@ const products = [
         rewards: [
             reward.leafDance2,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.tree2,
     },
     {
@@ -245,7 +248,7 @@ const products = [
         rewards: [
             reward.leafDance3,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.tree3,
     },
     {
@@ -253,7 +256,7 @@ const products = [
         rewards: [
             reward.leafDance1,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.tree1,
     },
     // {
@@ -265,7 +268,7 @@ const products = [
     //         reward.kingdomPresent,
     //         reward.kingdomPresent,
     //     ],
-    //     type: 'normal',
+    //     type: productType.normal,
     //     group: group.kingdomDefence,
     // },
     // {
@@ -273,7 +276,7 @@ const products = [
     //     rewards: [
     //         reward.lightningOrb1,
     //     ],
-    //     type: 'light',
+    //     type: productType.light,
     //     group: group.light1,
     // },
     // {
@@ -281,7 +284,7 @@ const products = [
     //     rewards: [
     //         reward.lightPage1,
     //     ],
-    //     type: 'light',
+    //     type: productType.light,
     //     group: group.kingdomDefence,
     // },
     // {
@@ -289,7 +292,7 @@ const products = [
     //     rewards: [
     //         reward.darkBalloon1,
     //     ],
-    //     type: 'dark',
+    //     type: productType.dark,
     //     group: group.dark1,
     // },
     // {
@@ -297,7 +300,7 @@ const products = [
     //     rewards: [
     //         reward.darkPage1,
     //     ],
-    //     type: 'dark',
+    //     type: productType.dark,
     //     group: group.kingdomDefence,
     // },
     // {
@@ -305,7 +308,7 @@ const products = [
     //     rewards: [
     //         reward.fireCracker1,
     //     ],
-    //     type: 'fire',
+    //     type: productType.fire,
     //     group: group.fire1,
     // },
     // {
@@ -313,7 +316,7 @@ const products = [
     //     rewards: [
     //         reward.firePage1,
     //     ],
-    //     type: 'fire',
+    //     type: productType.fire,
     //     group: group.kingdomDefence,
     // },
     // {
@@ -321,7 +324,7 @@ const products = [
     //     rewards: [
     //         reward.waterBomb1,
     //     ],
-    //     type: 'water',
+    //     type: productType.water,
     //     group: group.water1,
     // },
     // {
@@ -329,7 +332,7 @@ const products = [
     //     rewards: [
     //         reward.waterPage1,
     //     ],
-    //     type: 'water',
+    //     type: productType.water,
     //     group: group.kingdomDefence,
     // },
     {
@@ -337,7 +340,7 @@ const products = [
         rewards: [
             reward.leafDance1,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.tree1,
     },
     {
@@ -345,7 +348,7 @@ const products = [
         rewards: [
             reward.lightPage1,
         ],
-        type: 'tree',
+        type: productType.tree,
         group: group.kingdomDefence,
     },
     // {
@@ -359,6 +362,26 @@ const products = [
     //     type: 'common',
     //     group: group.kingdomDefence,
     // }
+    {
+        name: "왕위 쟁탈전: 승리",
+        rewards: [
+            reward.throneSkillBook,
+            reward.darkMagicCrystal,
+            reward.darkMagicCrystal,
+        ],
+        type: productType.normal,
+        group: group.throne,
+    },
+    {
+        name: "왕위 쟁탈전: 패배",
+        rewards: [
+            reward.throneSkillBook,
+            reward.throneSkillBook,
+            reward.darkMagicCrystal,
+        ],
+        type: productType.normal,
+        group: group.throne,
+    },
 ].map((p, idx) => ({ ...p, id: idx + 1 }))
 
 const members = [
