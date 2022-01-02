@@ -369,6 +369,8 @@ const products = [
             reward.throneSkillBook,
             reward.darkMagicCrystal,
             reward.darkMagicCrystal,
+            reward.blackRidingDye,
+            reward.blackRidingDye,
         ],
         type: productType.normal,
         group: group.throne,
@@ -421,9 +423,7 @@ const members = [
     { name: '플럼' },
     { name: '능구렁이' },
     { name: '구름빛블루베리' },
-    { name: '무빈' },
     { name: '슈슈베리' },
-    { name: '슈슈베리2' },
     { name: '윤민정' },
 ].sort((a, b) => {
     if (a.name < b.name) {
