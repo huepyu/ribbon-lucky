@@ -26,7 +26,8 @@ const reward = {
     waterPage1: '물의 마법 페이지 I',
     treePage1: '나무의 마법 페이지 I',
     throneSkillBook: '왕성 스킬북 상자',
-    darkMagicCrystal: '흑마법 결정 100개'
+    darkMagicCrystal: '흑마법 결정 100개',
+    blackRidingDye: '블랙 탈 것 염색약'
 }
 
 const productType = {
@@ -378,6 +379,7 @@ const products = [
             reward.throneSkillBook,
             reward.throneSkillBook,
             reward.darkMagicCrystal,
+            reward.blackRidingDye,
         ],
         type: productType.normal,
         group: group.throne,
