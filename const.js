@@ -418,13 +418,12 @@ const members = [
     { name: '망고띠' },
     { name: '리치푸른' },
     { name: '리망' },
-    { name: 'pook' },
     { name: '김쨩아' },
     { name: '플럼' },
     { name: '능구렁이' },
     { name: '구름빛블루베리' },
     { name: '슈슈베리' },
-    { name: '윤민정' },
+    { name: '이십알' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
