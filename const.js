@@ -407,7 +407,6 @@ const members = [
     { name: '단밤찐빵' },
     { name: '수란' },
     { name: '르봄' },
-    { name: '도밍고' },
     { name: '촙촙이' },
     { name: '촙촙2' },
     { name: '르미르르미' },
