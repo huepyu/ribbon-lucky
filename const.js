@@ -393,7 +393,6 @@ const members = [
     { name: '어머' },
     { name: '워니니' },
     { name: '휴퓨' },
-    { name: '츄퓨' },
     { name: '클린' },
     { name: '유한량' },
     { name: 'HyunA' },
@@ -419,7 +418,6 @@ const members = [
     { name: '능구렁이' },
     { name: '구름빛블루베리' },
     { name: '슈슈베리' },
-    { name: '이십알' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
