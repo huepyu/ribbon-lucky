@@ -419,6 +419,7 @@ const members = [
     { name: '슈슈베리' },
     { name: '파랑공룡' },
     { name: '쳔상' },
+    { name: '모험' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
