@@ -17,7 +17,7 @@ class ErrorBoundary extends React.Component {
     render() {
       if (this.state.hasError) {
         return <div className="error-wrapper">
-            <h1>아 단밤님 때문에 뭐가 잘못됐어요!</h1>
+            <h1>오류 발생! 처음부터 다시 해주세요</h1>
         </div>
       }
   
