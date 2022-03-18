@@ -408,7 +408,6 @@ const members = [
     { name: '촙촙이' },
     { name: '촙촙2' },
     { name: '르미르르미' },
-    { name: '쥬s' },
     { name: '망고띠' },
     { name: '리치푸른' },
     { name: '리망' },
@@ -419,7 +418,12 @@ const members = [
     { name: '슈슈베리' },
     { name: '파랑공룡' },
     { name: '쳔상' },
-    { name: '모험' },
+    { name: '규일이' },
+    { name: '르릉' },
+    { name: 'HOWL하울' },
+    { name: '초원의초밥' },
+    { name: '명탐정밍또찌' },
+    { name: '막힛' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
