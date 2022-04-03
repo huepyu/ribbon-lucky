@@ -392,7 +392,6 @@ const members = [
     { name: '단밤' },
     { name: '어머' },
     { name: '워니니' },
-    { name: '클린' },
     { name: '유한량' },
     { name: 'HyunA' },
     { name: '꼬마짱구' },
@@ -424,6 +423,20 @@ const members = [
     { name: '초원의초밥' },
     { name: '명탐정밍또찌' },
     { name: '막힛' },
+    { name: '유기농브로콜리' },
+    { name: '네츠' },
+    { name: '맛깔고등어로버프' },
+    { name: '못생긴붕어' },
+    { name: '박삐뽀' },
+    { name: '세비' },
+    { name: '소금맛아이스' },
+    { name: '신기하당' },
+    { name: '츄베리' },
+    { name: '카사리안' },
+    { name: '커꾜' },
+    { name: '커덩' },
+    { name: '포동포포이' },
+    { name: '형낑' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
