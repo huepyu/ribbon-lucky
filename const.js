@@ -398,16 +398,8 @@ const members = [
     { name: '쒸밤' },
     { name: '기린아' },
     { name: '주녕코' },
-    { name: '로로리다' },
     { name: 'ESNA' },
-    { name: '희네입니다' },
-    { name: '단밤찐빵' },
-    { name: '수란' },
-    { name: '르봄' },
-    { name: '촙촙이' },
-    { name: '촙촙2' },
     { name: '르미르르미' },
-    { name: '망고띠' },
     { name: '리치푸른' },
     { name: '리망' },
     { name: '김쨩아' },
@@ -437,6 +429,9 @@ const members = [
     { name: '커덩' },
     { name: '포동포포이' },
     { name: '형낑' },
+    { name: '김얄루' },
+    { name: '김은님' },
+    { name: '행복이숑' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
