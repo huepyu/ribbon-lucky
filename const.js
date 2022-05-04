@@ -432,6 +432,8 @@ const members = [
     { name: '김얄루' },
     { name: '김은님' },
     { name: '행복이숑' },
+    { name: '밍공이' },
+    { name: '폭력군' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
