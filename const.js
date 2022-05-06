@@ -395,8 +395,6 @@ const members = [
     { name: '유한량' },
     { name: 'HyunA' },
     { name: '꼬마짱구' },
-    { name: '쒸밤' },
-    { name: '기린아' },
     { name: '주녕코' },
     { name: 'ESNA' },
     { name: '르미르르미' },
@@ -434,6 +432,13 @@ const members = [
     { name: '행복이숑' },
     { name: '밍공이' },
     { name: '폭력군' },
+    { name: '분노의망치' },
+    { name: '날아라치킨맨' },
+    { name: '때리지마라' },
+    { name: '쑥덕이' },
+    { name: '곰탱아' },
+    { name: '희네입니다' },
+    { name: '단밤찐빵' },
 ].sort((a, b) => {
     if (a.name < b.name) {
         return -1;
