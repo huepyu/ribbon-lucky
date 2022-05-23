@@ -228,7 +228,7 @@ function Step2({ goNext, state, setState }) {
         (_, pidx) => pidx !== idx && !dups[pidx],
       )
       return {
-        value: '',
+        value: 'default',
         cloneTargets,
       }
     })
@@ -303,6 +303,11 @@ function Step2({ goNext, state, setState }) {
 
     const cloneTargetGroup = selectMap[targetIdx].value
 
+    if (cloneTargetGroup === 'default') {
+      window.alert('복사할 상품군을 먼저 선택하세요.')
+      return
+    }
+
     setState((v) => ({
       ...v,
       productsMembersMap: {
@@ -362,6 +367,9 @@ function Step2({ goNext, state, setState }) {
                       onChange={(e) => changeCloneTarget(e, idx)}
                       value={selectMap[idx].value}
                     >
+                      <option value="default" disabled>
+                        추첨 대상자를 복사할 상품군을 선택하세요.
+                      </option>
                       {selectMap[idx].cloneTargets.map((p, pidx) => {
                         return (
                           <option key={pidx} value={p.group}>
