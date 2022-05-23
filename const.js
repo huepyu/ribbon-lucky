@@ -22,6 +22,8 @@ const reward = {
   darkMagicCrystal100: '흑마법 결정 100개',
   blackRidingDye: '블랙 탈 것 염색약',
   ivoryRidingDye: '아이보리 탈 것 염색약',
+  defensiveKingdom: '디펜시브 킹덤',
+  offensiveKingdom: '오펜시브 킹덤',
 }
 
 // for background-color, color
@@ -59,6 +61,8 @@ const group = {
   darkMagicCrystal100: 'darkMagicCrystal100',
   blackRidingDye: 'blackRidingDye',
   ivoryRidingDye: 'ivoryRidingDye',
+  defensiveKingdom: 'defensiveKingdom',
+  offensiveKingdom: 'offensiveKingdom',
 }
 
 const products = [
@@ -257,6 +261,18 @@ const products = [
     rewards: [reward.ivoryRidingDye],
     type: productType.normal_ivory,
     group: group.ivoryRidingDye,
+  },
+  {
+    name: '유물 판매 보상: 디펜시브 킹덤',
+    rewards: [reward.defensiveKingdom],
+    type: productType.normal,
+    group: group.defensiveKingdom,
+  },
+  {
+    name: '유물 판매 보상: 오펜시브 킹덤',
+    rewards: [reward.offensiveKingdom],
+    type: productType.normal,
+    group: group.offensiveKingdom,
   },
 ].map((p, idx) => ({ ...p, id: idx + 1 }))
 
