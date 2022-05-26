@@ -84,14 +84,6 @@ const products = [
     type: productType.normal,
     group: group.dingo,
   },
-  // {
-  //     name: "엔트 석상 1단계",
-  //     rewards: [
-  //         reward.commonGemBox,
-  //     ],
-  //     type: productType.tree,
-  //     group: group.kingdomDungeonTree,
-  // },
   {
     name: '엔트 석상 4단계: 인크리스 우드',
     rewards: [reward.increaseWood],
@@ -104,14 +96,12 @@ const products = [
     type: productType.tree,
     group: group.increaseWood,
   },
-  // {
-  //     name: "화염의 기사 라스 1단계",
-  //     rewards: [
-  //         reward.commonGemBox,
-  //     ],
-  //     type: productType.fire,
-  //     group: group.kingdomDungeonFire,
-  // },
+  {
+    name: '엔트 석상 6단계: 인크리스 우드 2권',
+    rewards: [reward.increaseWood, reward.increaseWood],
+    type: productType.tree,
+    group: group.increaseWood,
+  },
   {
     name: '화염의 기사 라스 4단계: 인크리스 파이어',
     rewards: [reward.increaseFire],
@@ -120,6 +110,12 @@ const products = [
   },
   {
     name: '화염의 기사 라스 5단계: 인크리스 파이어 2권',
+    rewards: [reward.increaseFire, reward.increaseFire],
+    type: productType.fire,
+    group: group.increaseFire,
+  },
+  {
+    name: '화염의 기사 라스 6단계: 인크리스 파이어 2권',
     rewards: [reward.increaseFire, reward.increaseFire],
     type: productType.fire,
     group: group.increaseFire,
