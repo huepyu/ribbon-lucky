@@ -323,6 +323,9 @@ const members = [
   { name: '곰탱아' },
   { name: '희네입니다' },
   { name: '단밤찐빵' },
+  { name: '짱배' },
+  { name: '더브' },
+  { name: '꾸우루밍' },
 ]
   .sort((a, b) => {
     if (a.name < b.name) {
