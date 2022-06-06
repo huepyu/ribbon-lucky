@@ -1,7 +1,5 @@
 const STORAGE_KEY = 'STORAGE_KEY'
 
-const kingdomName = 'Ribbon'
-
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
@@ -32,11 +30,13 @@ class ErrorBoundary extends React.Component {
 function App() {
   const [step, setStep] = React.useState(1)
   const [state, setState] = React.useState(createNewState())
+  const [hasUpdated, setHasUpdated] = React.useState(false)
 
   function reset(e) {
     e.preventDefault()
     sessionStorage.clear()
     setState(createNewState())
+    setHasUpdated(false)
     setStep(1)
   }
 
@@ -51,15 +51,19 @@ function App() {
       })),
       // 당첨자
       drawers: [],
+      appVersion,
     }
   }
 
-  function goBack(e) {
-    e.preventDefault()
-    if (step !== 1) {
-      setStep((v) => v - 1)
+  React.useEffect(() => {
+    const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
+    if (state) {
+      setState(state)
+      if (appVersion !== state.appVersion) {
+        setHasUpdated(true)
+      }
     }
-  }
+  }, [])
 
   const goNext = React.useCallback(
     (e) => {
@@ -72,12 +76,12 @@ function App() {
     [state, step],
   )
 
-  React.useEffect(() => {
-    const state = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
-    if (state) {
-      setState(state)
+  function goBack(e) {
+    e.preventDefault()
+    if (step !== 1) {
+      setStep((v) => v - 1)
     }
-  }, [])
+  }
 
   function getStepText() {
     switch (step) {
@@ -94,24 +98,40 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div className="root-title">
-        <button
-          className="title-btn back-btn"
-          disabled={step === 1}
-          onClick={goBack}
-        >
-          뒤로
-        </button>
-        <div className="title-wrapper">
-          <p className="title-text">
-            {kingdomName} 행운상점 추첨 <span>by 휴퓨</span>
-          </p>
-          <p className="title-step">{getStepText()}</p>
-        </div>
-        <button className="title-btn reset-btn" onClick={reset}>
-          초기화
-        </button>
-      </div>
+      <>
+        {!hasUpdated && (
+          <div className="root-title">
+            <button
+              className="title-btn back-btn"
+              disabled={step === 1}
+              onClick={goBack}
+            >
+              뒤로
+            </button>
+            <div className="title-wrapper">
+              <p className="title-text">
+                {kingdomName} 행운상점 추첨 <span>by 휴퓨</span>
+              </p>
+              <p className="title-step">{getStepText()}</p>
+            </div>
+            <button className="title-btn reset-btn" onClick={reset}>
+              초기화
+            </button>
+          </div>
+        )}
+        {hasUpdated && (
+          <div className="root-title has-updated">
+            <div className="title-updated-wrapper">
+              <span className="title-updated-text">
+                업데이트가 완료되었습니다. 반드시 초기화 후 진행해주세요.
+              </span>
+              <button className="title-btn reset-btn" onClick={reset}>
+                초기화
+              </button>
+            </div>
+          </div>
+        )}
+      </>
       <div className="root-content">
         {step === 1 && (
           <Step1 goNext={goNext} state={state} setState={setState} />
@@ -132,7 +152,29 @@ function App() {
 function Step1({ goNext, state, setState }) {
   const leftRef = React.useRef(null)
 
-  const step1Products = React.useMemo(() => [...products], [])
+  const step1Products = React.useMemo(() => {
+    const productsByLine = []
+
+    let previousLine = null
+    let currentLineProducts = []
+    products.forEach((product, idx) => {
+      if (previousLine !== product.line) {
+        if (previousLine !== null) {
+          productsByLine.push(currentLineProducts)
+        }
+        currentLineProducts = []
+        previousLine = product.line
+      }
+      currentLineProducts.push(product)
+
+      if (idx === products.length - 1) {
+        productsByLine.push(currentLineProducts)
+      }
+    })
+    return productsByLine
+  }, [])
+
+  console.log(step1Products)
 
   function addProduct(e, product) {
     e.preventDefault()
@@ -178,7 +220,28 @@ function Step1({ goNext, state, setState }) {
           <p className="s1-right-title">
             오늘 행운 상점의 상품을 순서대로 골라주세요.
           </p>
-          <div className="s1-products-grid">
+          {step1Products.map((lineProducts, lineIdx) => {
+            return (
+              <div className="s1-products-grid" key={lineIdx}>
+                {lineProducts.map((p) => (
+                  <div
+                    key={p.id}
+                    className={`s1-product ${p.type}`}
+                    onClick={(e) => addProduct(e, p)}
+                  >
+                    <p className="s1-product-title">{p.name}</p>
+                    {p.rewards.map((r, idx) => (
+                      <p key={idx} className="s1-product-reward">
+                        {r}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )
+          })}
+
+          {/* <div className="s1-products-grid">
             {step1Products.map((p) => (
               <div
                 key={p.id}
@@ -193,7 +256,7 @@ function Step1({ goNext, state, setState }) {
                 ))}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
       <button

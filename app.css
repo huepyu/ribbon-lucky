@@ -27,15 +27,32 @@ body {
     padding: 20px;
 }
 
+.has-updated {
+    background-color: #f00 !important;
+    justify-content: center !important;
+}
+
 .title-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.title-updated-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .title-text {
     font-size: 36px;
     color: #000;
+}
+
+.title-updated-text {
+    font-size: 24px;
+    /* font-weight: bold; */
+    color: #fff;
 }
 
 .title-text span {
@@ -53,6 +70,7 @@ body {
     border-radius: 10px;
     margin-left: 10px;
     font-size: 12px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -182,10 +200,11 @@ body {
 
 .s1-products-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(200px, auto);
     column-gap: 20px;
     row-gap: 20px;
+    margin-bottom: 20px;
 }
 
 .s1-product {
