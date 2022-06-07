@@ -174,8 +174,6 @@ function Step1({ goNext, state, setState }) {
     return productsByLine
   }, [])
 
-  console.log(step1Products)
-
   function addProduct(e, product) {
     e.preventDefault()
     setState((v) => ({
@@ -564,7 +562,7 @@ function Step3({ goNext, state, setState }) {
   function createTargetIds(currentReward) {
     const r = currentReward ?? drawingState.currentReward
 
-    const targetMembers = state.productsMembersMap[r.product.group]
+    const targetMembers = (state.productsMembersMap[r.product.group] ?? [])
       .filter((m) => m.target)
       .map((m) => m.id)
       .map((id) => state.members.find((m) => m.id === id))
@@ -617,6 +615,7 @@ function Step3({ goNext, state, setState }) {
         ...v.drawers,
         {
           name: drawingState.currentReward.reward,
+          icon: groupIcon[drawingState.currentReward.product.group],
           member: state.members.find((m) => m.id === drawerId),
         },
       ],
@@ -758,11 +757,26 @@ function Step3({ goNext, state, setState }) {
 function Step4({ state }) {
   return (
     <div className="s4-wrapper">
-      {state.drawers.map((d, idx) => (
-        <p className="s4-drawer" key={idx}>
-          {d.name} - {d.member.name}
-        </p>
-      ))}
+      <div className="s4-grid">
+        {state.drawers.map((d, idx) => (
+          <div className="s4-reward" key={idx}>
+            <div className="s4-reward-icon">
+              <img src={d.icon} alt={d.name} />
+            </div>
+            <div className="s4-reward-detail">
+              <div className="s4-reward-name">{d.name}</div>
+              <div className="s4-reward-member">{d.member.name}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="s4-drawers-text">
+        {state.drawers.map((d, idx) => (
+          <p key={idx}>
+            {d.name} - {d.member.name}
+          </p>
+        ))}
+      </div>
     </div>
   )
 }

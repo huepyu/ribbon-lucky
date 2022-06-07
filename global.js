@@ -1,4 +1,4 @@
-const appVersion = '1.0.0'
+const appVersion = '1.1.0'
 
 const reward = {
   dingo: '딩고 호박',
@@ -65,6 +65,34 @@ const group = {
   ivoryRidingDye: 'ivoryRidingDye',
   defensiveKingdom: 'defensiveKingdom',
   offensiveKingdom: 'offensiveKingdom',
+}
+
+const groupIcon = {
+  dingo: '/assets/dingo.png',
+  blackDye: '/assets/black_dye.png',
+  increaseWood: '/assets/normal_skill_book.png',
+  increaseFire: '/assets/normal_skill_book.png',
+  light1: '/assets/skill_book_box.png',
+  light2: '/assets/skill_book_box.png',
+  light3: '/assets/skill_book_box.png',
+  dark1: '/assets/skill_book_box.png',
+  dark2: '/assets/skill_book_box.png',
+  dark3: '/assets/skill_book_box.png',
+  fire1: '/assets/skill_book_box.png',
+  fire2: '/assets/skill_book_box.png',
+  fire3: '/assets/skill_book_box.png',
+  water1: '/assets/skill_book_box.png',
+  water2: '/assets/skill_book_box.png',
+  water3: '/assets/skill_book_box.png',
+  tree1: '/assets/skill_book_box.png',
+  tree2: '/assets/skill_book_box.png',
+  tree3: '/assets/skill_book_box.png',
+  throneSkillBook: '/assets/skill_book_box.png',
+  darkMagicCrystal100: '/assets/dark_magic_crystal.png',
+  blackRidingDye: '/assets/black_riding_dye.png',
+  ivoryRidingDye: '/assets/ivory_riding_dye.png',
+  defensiveKingdom: '/assets/normal_skill_book.png',
+  offensiveKingdom: '/assets/normal_skill_book.png',
 }
 
 const products = [
