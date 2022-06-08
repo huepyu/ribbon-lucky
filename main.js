@@ -755,9 +755,26 @@ function Step3({ goNext, state, setState }) {
 
 // 스텝 4: 추첨 결과
 function Step4({ state }) {
+  const gridColumn = React.useMemo(() => {
+    const count = state.drawers.length
+
+    if (count <= 4) {
+      return 2
+    }
+
+    if (count <= 18) {
+      return 3
+    }
+
+    return 4
+  }, [state.drawers])
+
   return (
     <div className="s4-wrapper">
-      <div className="s4-grid">
+      <div
+        className="s4-grid"
+        style={{ gridTemplateColumns: `repeat(${gridColumn}, 1fr)` }}
+      >
         {state.drawers.map((d, idx) => (
           <div className="s4-reward" key={idx}>
             <div className="s4-reward-icon">
