@@ -1,4 +1,4 @@
-const appVersion = '1.2.1'
+const appVersion = '1.3.2'
 
 const reward = {
   dingo: '딩고 호박',

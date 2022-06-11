@@ -762,7 +762,7 @@ function Step4({ state }) {
       return 2
     }
 
-    if (count <= 18) {
+    if (count <= 24) {
       return 3
     }
 
