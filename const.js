@@ -55,6 +55,14 @@ const members = [
   { name: '더브' },
   { name: '꾸우루밍' },
   { name: '아이솔칸' },
+  { name: '숙적' },
+  { name: '나몽체리' },
+  { name: '여울빛거리' },
+  { name: '김다찌' },
+  { name: '바다빛엘더베리' },
+  { name: '군퐝이' },
+  { name: '달빛라이언' },
+  { name: '찐롱치' },
 ]
   .sort((a, b) => {
     if (a.name < b.name) {
