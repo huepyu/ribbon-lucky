@@ -63,6 +63,9 @@ const members = [
   { name: '군퐝이' },
   { name: '달빛라이언' },
   { name: '찐롱치' },
+  { name: '역기든고양이' },
+  { name: '아기하양' },
+  { name: '아기까망' }
 ]
   .sort((a, b) => {
     if (a.name < b.name) {
