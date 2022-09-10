@@ -1,7 +1,7 @@
 // major: 메인 기능 변동
 // minor: 사소한 기능 변동
 // patch: 멤버 변경, 버그 픽스
-const appVersion = '1.3.58'
+const appVersion = '1.3.59'
 
 const reward = {
   dingo: '딩고 호박',
