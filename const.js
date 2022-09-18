@@ -3,7 +3,7 @@ const kingdomName = 'Ribbon'
 const members = [
   { name: '단밤' },
   { name: '어머' },
-  { name: '워니니' },
+  { name: '하미또' },
   { name: '유한량' },
   { name: 'HyunA' },
   { name: '주녕코' },
@@ -49,7 +49,12 @@ const members = [
   { name: '히토모히토' },
   { name: '규일이' },
   { name: '춤추는나무' },
-  { name: '얼짱' }
+  { name: '얼짱' },
+  // 운영진 버프
+  { name: '단밤' },
+  { name: '어머' },
+  { name: '주녕코' },
+  { name: '리망' },
 ]
   .sort((a, b) => {
     if (a.name < b.name) {
