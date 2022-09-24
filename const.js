@@ -55,6 +55,9 @@ const members = [
   { name: '어머' },
   { name: '주녕코' },
   { name: '리망' },
+  { name: '꾸우루밍' },
+  { name: '구름빛블루베리' },
+  { name: '김쨩아' },
 ]
   .sort((a, b) => {
     if (a.name < b.name) {
